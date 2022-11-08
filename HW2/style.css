@@ -1,0 +1,129 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Home page (index.html) */
+.hero {
+    text-align: center;
+    min-height: 540px;
+    background-color: #FFC0CB;
+}
+
+.hero-name {
+    font-size: 170px;
+    text-transform: uppercase;
+    font-weight: 700;
+    /* background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: url('https://media-exp1.licdn.com/dms/image/C4E03AQHwhKm1EQhXBw/profile-displayphoto-shrink_400_400/0/1571319885798?e=1672876800&v=beta&t=30KO1WZ2T1ddbVDZYmHPpHO7D8x_huk3woEafa72Yy8'); */
+    transition: all 1s;
+    margin: 0;
+}
+
+.hero-description {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s, opacity 0.5s ease;
+    margin: 0;
+    font-size: 0;
+}
+
+.hero:hover .hero-description {
+    visibility: visible;
+    opacity: 1;
+    font-size: 32px;
+    margin: 7px;
+}
+
+.hero:hover #first-name {
+    transform: translateY(-10px);
+}
+.hero:hover #last-name {
+    transform: translateY(10px);
+}
+
+.home-overview {
+    text-align: center;
+}
+
+.chantal-img {
+    border-radius: 100%;
+    border: 17px solid #ffffff;
+    position: relative;
+    top: -30px;
+}
+
+.page-links {
+    list-style: none;
+    position: relative;
+}
+
+.page-link-option {
+    background-color:#FFC0CB;
+    border-radius: 100%;
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.page-link-option:nth-child(odd) {
+    left: 15%;
+}
+
+.page-link-option:nth-child(even) {
+    right: 15%;
+}
+
+.page-link-option:nth-child(2) {
+    top: 200px;
+}
+
+.page-link-option:nth-child(3) {
+    top: 400px;
+}
+
+.page-link-option:nth-child(4) {
+    top: 600px;
+}
+
+.page-link-option:nth-child(5) {
+    top: 800px;
+}
+
+.page-link-option:nth-child(6) {
+    top: 1000px;
+}
+
+.page-link {
+    text-decoration: none;
+}
+
+.page-description {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s, opacity 0.5s ease;
+    margin: 0;
+    font-size: 0;
+}
+
+.page-title {
+    font-size: 50px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.page-link-option:hover .page-description {
+    visibility: visible;
+    opacity: 1;
+    font-size: 16px;
+    margin: 7px;
+}
+
+/* Experience page (experience.html) */
+
