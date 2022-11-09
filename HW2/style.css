@@ -127,151 +127,43 @@
 
 /* Experience page (experience.html) */
 
-/* .work-experience-container {
-    position: relative;
-}
-
 .timeline {
-    border: 4px solid #FFC0CB;
-    height: 100%;
-    position: absolute;
-    left: 50%;
-}
-
-.line {
-    border: 1px solid #E0E0E0;
-    position: absolute;
-    left: -100px;
-    width: 100px;
-    top: 24px;
-}
-
-.marker {
-    position: absolute;
-    right: -25%;
-}
-
-.dot {
-    width: 40px;
-    height: 40px;
-    background-color: #FFC0CB;
-    border-radius: 100%;
-    border: 4px solid #E0E0E0;
+    border-left: 7px solid #e0e0e0;
+    margin-left: 30px;
 }
 
 .work {
-    border: 4px solid #E0E0E0;
-    padding: 10px;
-    width: 40%;
+    padding-left: 30px;
+    margin-top: 70px;
     position: relative;
-    margin-bottom: 15px;
-} */
-
-/* .work:nth-child(odd) {
-    left: 15%;
 }
 
-.work:nth-child(even) {
-    right: 15%;
-}
-
-.work:nth-child(2) {
-    top: 200px;
-}
-
-.work:nth-child(3) {
-    top: 400px;
-}
-
-.work:nth-child(4) {
-    top: 600px;
-}
-
-.work:nth-child(5) {
-    top: 800px;
-} */
-
-/* .page-link-option:nth-child(6) {
-    top: 1000px;
+.years::before {
+    content: ' ';
+    width: 30px;
+    height: 30px;
+    background-color: #FFC0CB;
+    border-radius: 100%;
+    position: absolute;
+    left: -19px;
+    top: -5px;
 }
 
 .job-title {
     text-transform: uppercase;
     font-size: 24px;
+    margin-bottom: 0;
 }
 
-.company {
-    border-bottom: 2px solid #FFC0CB;
-    padding-bottom: 7px;
+.responsibilities {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s, opacity 0.5s ease;
+    font-size: 0;
 }
 
-.years {
-    position: absolute;
-    right: calc(-50% - 10px);
-} */
-
-
-.work-experience-container {
-    position: relative;
-}
-
-.work-experience-container::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background: #e0e0e0;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1px;
-}
-
-.work {
-    padding: 15px 30px;
-    position: relative;
-    background: inherit;
-    width: 40%;
-}
-
-.work.left {
-    left: -94px;
-}
-
-.work.right {
-    left: 50%;
-}
-
-.work.left::after {
-    right: 50px;
-}
-
-.work.right::after {
-    left: -8px;
-}
-
-.work::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    top: calc(50% - 8px);
-    right: -8px;
-    background: #ffffff;
-    border: 2px solid #e0e0e0;
-    border-radius: 16px;
-    z-index: 1;
-}
-
-.years {
-    position: absolute;
-    top: calc(50% - 24px);
-    z-index: 1;
-}
-
-.work.left .years {
-    right: -110px;
-}
-
-.work.right .years {
-    left: -175px;
+.work:hover .responsibilities {
+    visibility: visible;
+    opacity: 1;
+    font-size: 16px;
 }
