@@ -127,7 +127,7 @@
 
 /* Experience page (experience.html) */
 
-.work-experience-container {
+/* .work-experience-container {
     position: relative;
 }
 
@@ -165,7 +165,7 @@
     width: 40%;
     position: relative;
     margin-bottom: 15px;
-}
+} */
 
 /* .work:nth-child(odd) {
     left: 15%;
@@ -191,7 +191,7 @@
     top: 800px;
 } */
 
-.page-link-option:nth-child(6) {
+/* .page-link-option:nth-child(6) {
     top: 1000px;
 }
 
@@ -208,4 +208,70 @@
 .years {
     position: absolute;
     right: calc(-50% - 10px);
+} */
+
+
+.work-experience-container {
+    position: relative;
+}
+
+.work-experience-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #e0e0e0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.work {
+    padding: 15px 30px;
+    position: relative;
+    background: inherit;
+    width: 40%;
+}
+
+.work.left {
+    left: -94px;
+}
+
+.work.right {
+    left: 50%;
+}
+
+.work.left::after {
+    right: 50px;
+}
+
+.work.right::after {
+    left: -8px;
+}
+
+.work::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: calc(50% - 8px);
+    right: -8px;
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.years {
+    position: absolute;
+    top: calc(50% - 24px);
+    z-index: 1;
+}
+
+.work.left .years {
+    right: -110px;
+}
+
+.work.right .years {
+    left: -175px;
 }
