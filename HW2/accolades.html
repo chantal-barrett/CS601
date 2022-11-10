@@ -6,6 +6,10 @@
         <meta name="description" content="These are some of my accolades">
         <meta name="keywords" content="Boston Univeristy, CS601, Chantal, accodlades">
         <title>Chantal Barrett | Accolades</title>
+        <link href="style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -46,37 +50,34 @@
 
         <!-- The main content of the page -->
         <main>
-            <img src="content/trophy.png" alt="trophy" width="70" height="70">
-            <h2>Accolades</h2>
-            <p>I have recieved many awards and recognitions since I entered the technology industry. Below are a few of them!</p>
+            <section class="hero">
+                <div class="hero-media">
+                    <img class="hero-image" src="content/award-hero.png" alt="trophy">
+                </div>
+
+                <h2 class="hero-title">Accolades</h2>
+                <p class="hero-description">I have recieved many awards and recognitions since I entered the technology industry. Below are a few of them!</p>
+            </section>
             
-            <table>
-                <caption>Accolades</caption>
-                <thead>
-                    <tr>
-                        <th>Accolade</th>
-                        <th>Recieved From</th>
-                        <th>Recieved Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Dell Inspire Awards (12)</td>
-                        <td>Dell</td>
-                        <td>2017 - 2022</td>
-                    </tr>
-                    <tr>
-                        <td>Dell IT Master's Program</td>
-                        <td>Dell</td>
-                        <td>2020</td>
-                    </tr>
-                    <tr>
-                        <td>Best of the Best Thesis Award</td>
-                        <td>Endicott College</td>
-                        <td>2017</td>
-                    </tr>
-                </tbody>
-            </table>
+            <section class="accolade-section">
+                <div class="accolade">
+                    <h3 class="accolade-title">Dell Inspire Awards (12)</h3>
+                    <p class="accolade-recieved">2017 to 2022</p>
+                    <p class="accolade-description">These awards are given to employees who go above and beyond their responsibilities.</p>
+                </div>
+
+                <div class="accolade">
+                    <h3 class="accolade-title">Dell IT Master's Program</h3>
+                    <p class="accolade-recieved">2020</p>
+                    <p class="accolade-description">This is an extremely competitive development program at Dell that offers many benefits to employees who show great career growth potential.</p>
+                </div>
+
+                <div class="accolade">
+                    <h3 class="accolade-title">Best of the Best Thesis Award</h3>
+                    <p class="accolade-recieved">2017</p>
+                    <p class="accolade-description">These awards is given to the student with the most exception thesis in Endicott College's School of Art and Science.</p>
+                </div>
+            </section>
         </main>
 
         <footer>

@@ -2,17 +2,60 @@
 
 :root {
     --pink: #FFC0CB;
+    --white: #FFFFFF;
+    --light-gray: #EEEEEE;
 }
 
+/* @font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+} */
 * {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Home page (index.html) */
 .hero {
+    position: relative;
+}
+
+.hero-media {
+    overflow: hidden;
+    height: 200px;
+}
+
+.hero-video {
+    width: 100%;
+    margin-top: -200px;
+    filter: grayscale(100%);
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+}
+
+.hero-title {
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    background: pink;
+    color: black;
+}
+
+.hero-description {
+    text-align: center;
+    border-bottom: 1px solid pink;
+    margin: 10px 50px;
+    padding: 15px;
+}
+
+/* Home page (index.html) */
+#home-hero {
+    background-color: var(--pink);
     text-align: center;
     min-height: 540px;
-    background-color: var(--pink);
 }
 
 .hero-name {
@@ -27,7 +70,7 @@
     margin: 0;
 }
 
-.hero-description {
+.home-hero-description {
     visibility: hidden;
     opacity: 0;
     transition: all 1s, opacity 0.5s ease;
@@ -35,19 +78,37 @@
     font-size: 0;
 }
 
-.hero:hover .hero-description {
+#home-hero:hover .home-hero-description {
     visibility: visible;
     opacity: 1;
     font-size: 32px;
     margin: 7px;
 }
 
-.hero:hover #first-name {
+#home-hero:hover #first-name {
     transform: translateY(-10px);
 }
 
-.hero:hover #last-name {
+#home-hero:hover #last-name {
     transform: translateY(10px);
+}
+
+.home-title {
+    margin-top: 0;
+    font-size: 40px;
+}
+
+.home-description {
+    text-align: center;
+    margin: 0 10%;
+    line-height: 24px;
+}
+
+.home-header {
+    text-align: center;
+    margin: 30px 10%;
+    padding: 15px;
+    background: var(--pink);
 }
 
 .home-overview {
@@ -56,7 +117,7 @@
 
 .chantal-img {
     border-radius: 100%;
-    border: 17px solid #ffffff;
+    border: 17px solid var(--white);
     position: relative;
     top: -30px;
 }
@@ -64,72 +125,41 @@
 .page-links {
     list-style: none;
     position: relative;
+    background: url('content/selfie.JPG');
+    background-repeat: no-repeat;
+    padding: 30px;
 }
 
 .page-link-option {
     background-color:var(--pink);
-    border-radius: 100%;
-    height: 300px;
-    width: 300px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-}
-
-.page-link-option:nth-child(odd) {
-    left: 15%;
-}
-
-.page-link-option:nth-child(even) {
-    right: 15%;
-}
-
-.page-link-option:nth-child(2) {
-    top: 200px;
-}
-
-.page-link-option:nth-child(3) {
-    top: 400px;
-}
-
-.page-link-option:nth-child(4) {
-    top: 600px;
-}
-
-.page-link-option:nth-child(5) {
-    top: 800px;
-}
-
-.page-link-option:nth-child(6) {
-    top: 1000px;
+    margin-bottom: 30px;
+    padding: 15px;
 }
 
 .page-link {
     text-decoration: none;
-}
-
-.page-link-description {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 1s, opacity 0.5s ease;
-    margin: 0;
-    font-size: 0;
+    color: #2a2a2a;
 }
 
 .page-link-title {
-    font-size: 50px;
+    font-size: 2rem;
     text-transform: uppercase;
     margin: 0;
 }
 
-.page-link-option:hover .page-link-description {
-    visibility: visible;
-    opacity: 1;
-    font-size: 16px;
-    margin: 7px;
+.page-link-option:hover {
+    background-color: var(--white);
+}
+
+.page-link-image {
+    border-radius: 100%;
+    border: 17px solid var(--white);
+    position: relative;
+}
+
+.page-link-description {
+    font-size: 1rem;
+    color: #2a2a2a;
 }
 
 /* Experience page (experience.html) */
@@ -146,10 +176,9 @@
     position: relative;
     margin-top: 70px;
     padding: 10px 30px;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     margin-left: 30px;
     width: fit-content;
-    min-width: 700px;
     border-radius: 17px
 }
 
@@ -165,9 +194,6 @@
     border: 7px solid var(--pink);
 }
 
-.work:hover .years::before {
-    background-color: var(--pink);
-}
 
 .job-title {
     text-transform: uppercase;
@@ -175,58 +201,9 @@
     margin-bottom: 0;
 }
 
-.responsibilities {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 1s, opacity 0.5s ease;
-    font-size: 0;
-    border-top: 1px solid var(--pink);
-}
-
-.work:hover .responsibilities {
-    visibility: visible;
-    opacity: 1;
-    font-size: 16px;
-}
-
 /* About page (about.html) */
 
-#about-hero {
-    position: relative;
-}
-
-.about-video-container {
-    overflow: hidden;
-    height: 200px;
-}
-
-.about-video {
-    width: 100%;
-    margin-top: -200px;
-    filter: grayscale(100%);
-}
-
-.about-title {
-    padding: 15px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 30px;
-    background: pink;
-    color: black;
-}
-
-.about-description {
-    text-align: center;
-    border-bottom: 1px solid pink;
-    margin: 10px 50px;
-    padding: 15px;
-}
-
 .activity {
-    /* background: url('../archive/jetskiing.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
     padding: 30px;
 }
 
@@ -248,7 +225,7 @@
 }
 
 .activity-right .activity-details-title {
-    border-bottom: 1px solid #FFFFFF;
+    border-bottom: 1px solid var(--white);
 }
 
 .image-caption {
@@ -273,7 +250,7 @@
 /* Contact page (contact.html) */
 
 .contact-section {
-    background: #FFFFFF;
+    background: var(--white);
     display: flex;
     padding: 40px;
 }
@@ -345,19 +322,101 @@
     color: pink;
 }
 
+/* Accolades Page (accolades.html) */
+
+.accolade-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.accolade {
+    padding: 15px;
+    margin: 15px;
+    background-color: var(--pink);
+}
+
+.accolade-title {
+    text-transform: uppercase;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 15px;
+    font-size: 1.4em;
+}
+
 /* Media Queries */
+/* Desktop */
 @media screen and (min-width: 768px) {
+
+    /* Home */
+    .page-links {
+        background-position-y: -400px;
+    }
+
+    .page-link-content {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s, opacity 0.5s ease;
+        margin: 0;
+        position: absolute;
+        left: 40%;
+        margin-right: 30px;
+        top: 30px;
+        background: #fff;
+        height: calc(100% - 60px);
+        width: calc(60% - 30px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .page-link-option:hover .page-link-content {
+        visibility: visible;
+        opacity: 1;
+        font-size: 32px;
+    }
+
+    .page-link-option {
+        width: 200px;
+    }
+
+    .page-link-description {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    /* Experience */
+    .work {
+        min-width: 600px;
+    }
+
+    .work:hover .years::before {
+        background-color: var(--pink);
+    }
+    .responsibilities {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s, opacity 0.5s ease;
+        font-size: 0;
+        border-top: 1px solid var(--pink);
+    }
+    
+    .work:hover .responsibilities {
+        visibility: visible;
+        opacity: 1;
+        font-size: 16px;
+    }
     
     /* Media Query - About page */
-    .about-video-container {
+    .hero-media {
         height: 500px;
     }
 
-    .about-video {
+    .hero-video {
         margin-top: -400px;
     }
 
-    .about-title {
+    .hero-title {
         position: absolute;
         top: 175px;
         left: 0;
@@ -404,8 +463,19 @@
         padding-left: 30px;
         margin-top: 0;
     }
+
+    /* Accolade page */
+    .accolade-section {
+        flex-wrap: nowrap;
+    }
+    
+    .accolade {
+        width: 33%;
+        box-shadow: 0 0 10px var(--light-gray);
+    }
 }
 
+/* Mobile */
 @media screen and (max-width: 767.9px) {
 
     /* About page */
