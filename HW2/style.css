@@ -1,11 +1,12 @@
 /* Variables */
-
 :root {
     --pink: #FFC0CB;
     --white: #FFFFFF;
     --light-gray: #EEEEEE;
     --gray: #2A2A2A;
 }
+
+/* General styles */
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -41,6 +42,13 @@
     color: black;
 }
 
+.page-title {
+    color: var(--pink);
+    font-size: 70px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 .hero-description {
     text-align: center;
     border-bottom: 1px solid pink;
@@ -48,7 +56,13 @@
     padding: 15px;
 }
 
+.main-container {
+    max-width: 1400px;
+    margin: auto;
+}
+
 /* Quick Links */
+
 .quick-links-container {
     position: fixed;
     right: 0;
@@ -79,7 +93,6 @@
     transition: all 1s;
     height: 0;
 }
-
 
 .quick-links-container:hover .quick-links-content {
     visibility: visible;
@@ -222,9 +235,6 @@
 }
 
 /* Experience page (experience.html) */
-#work-experience-container {
-    padding: 30px 5px;
-}
 
 .timeline {
     border-left: 7px solid var(--pink);
@@ -235,17 +245,17 @@
     position: relative;
     margin-top: 70px;
     padding: 10px 30px;
-    background-color: var(--white);
+    background-color: var(--light-gray);
     margin-left: 30px;
     width: fit-content;
     border-radius: 17px
 }
 
-.years::before {
+.years:before {
     content: ' ';
     width: 43px;
     height: 43px;
-    background-color: var(--gray);
+    background-color: var(--white);
     border-radius: 100%;
     position: absolute;
     left: -62px;
@@ -256,7 +266,7 @@
 
 .job-title {
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 19px;
     margin-bottom: 0;
 }
 
@@ -308,6 +318,11 @@
 
 /* Contact page (contact.html) */
 
+#contact-container {
+    background-color: var(--gray);
+    padding: 15px 30px 40px 30px;
+}
+
 .contact-section {
     background: var(--white);
     display: flex;
@@ -318,9 +333,14 @@
     text-align: center;
 }
 
-.contact-say-hi {
+.contact-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.contact-title {
     font-size: 30px;
-    margin-bottom: 15px;
+    margin: 15px 0px;
 }
 
 #contact-form {
@@ -371,7 +391,7 @@
     line-height: 50px;
     width: 100px;
     text-transform: uppercase;
-    margin-top: 40px;
+    margin: 40px auto auto auto;
 }
 
 #submit:hover {
@@ -403,11 +423,48 @@
     font-size: 1.4em;
 }
 
-/* Media Queries */
-/* Desktop */
-@media screen and (min-width: 768px) {
+/* Education page (education.html) */
 
-    /* Home */
+.college {
+    padding: 30px;
+    background: var(--light-gray);
+    margin-bottom: 30px;
+}
+
+/* .college-icon {
+    width: 70px;
+    height: 70px;
+    vertical-align: middle;
+    margin-right: 15px;
+} */
+
+.college-year {
+    border-bottom: 1px solid var(--pink);
+    padding-bottom: 15px;
+}
+
+.degree {
+    text-transform: uppercase;
+}
+
+.courses-table {
+    margin: 15px auto;
+}
+
+.courses-header {
+    padding: 5px;
+    background: var(--pink);
+    margin-bottom: 10px;
+}
+
+/* Media Queries */
+/* Screen resolutions for mobile, tablet, and desktop taken from: https://www.geeksforgeeks.org/how-to-target-desktop-tablet-and-mobile-using-media-query/ */
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+
+    /* Home - Desktop */
     .page-links {
         background-position-y: -400px;
     }
@@ -444,14 +501,21 @@
         text-align: center;
     }
 
-    /* Experience */
+    /* Experience - Desktop */
     .work {
-        min-width: 600px;
+        width: calc(100% - 140px);
+        margin-right: 30px;
+        margin-left: 70px;
     }
 
-    .work:hover .years::before {
+    .work:hover .years:before {
         background-color: var(--pink);
     }
+
+    .years:before {
+        left: -102px;
+    }
+
     .responsibilities {
         visibility: hidden;
         opacity: 0;
@@ -466,13 +530,13 @@
         font-size: 16px;
     }
     
-    /* Media Query - About page */
+    /* About - Desktop */
     .hero-media {
         height: 500px;
     }
 
     .hero-video {
-        margin-top: -400px;
+        margin-top: -470px;
     }
 
     .hero-title {
@@ -486,11 +550,6 @@
     }
     .activity {
         display: flex;
-    }
-
-    .activity-content {
-        display: flex;
-        flex-direction: column;
     }
 
     .activity-left .activity-content {
@@ -513,17 +572,28 @@
         border-bottom: 1px solid var(--pink);
     }
 
-    /* Contact page */
+    /* Contact - Desktop */
+    .contact-section {
+        max-width: 1000px;
+        margin: auto;
+        padding: 70px 40px;
+    }
+    
     .contact-content {
         text-align: left;
     }
+    
+    .contact-icon {
+        width: 100px;
+        height: 100px;
+    }    
 
     #contact-form {
         padding-left: 30px;
         margin-top: 0;
     }
 
-    /* Accolade page */
+    /* Accolade - Desktop */
     .accolade-section {
         flex-wrap: nowrap;
     }
@@ -534,31 +604,22 @@
     }
 }
 
-/* Mobile */
-@media screen and (max-width: 767.9px) {
+/* Mobile and Tablet */
+@media screen and (max-width: 1023.9px) {
 
-    /* About page */
+    /* About - Mobile/Tablet */
     .activity-image {
         width: 100%;
         height: 100%;
     }
 
-    /* Contact page */
+    /* Contact - Mobile/Tablet */
     .contact-section {
         flex-direction: column;
     }
 }
 
-/* General styles */
+/* Mobile */
+@media screen and (max-width: 479.9px) {
 
-.main-container {
-    background-color: var(--gray);
-    padding: 15px;
-}
-
-.page-title {
-    color: var(--pink);
-    font-size: 70px;
-    text-align: center;
-    text-transform: uppercase;
 }
