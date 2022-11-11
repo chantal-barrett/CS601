@@ -6,6 +6,10 @@
         <meta name="description" content="This page gives an overview of my education">
         <meta name="keywords" content="Boston Univeristy, CS601, Chantal, education">
         <title>Chantal Barrett | Education</title>
+        <link href="style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -25,23 +29,24 @@
             <a href="experience.html">EXPERIENCE</a>
         </nav>
 
-        <!-- With CSS, this will be on the side of the page so a user can quickly connect with me using these links -->
-        <aside>
-            <h2>Quick Links</h2>
-            <a href="https://www.linkedin.com/in/chantal-barrett/" target="_blank">
-                <img src="content/linkedin.png" alt="LinkedIn icon" width="30" height="30">
-                LinkedIn
-            </a>
-        
-            <a href="https://github.com/chantal-barrett/CS601" target="_blank">
-                <img src="content/gitlogo.png" alt="Git icon" width="30" height="30">
-                Git
-            </a>
-        
-            <a href="mailto:chantalb@bu.edu">
-                <img src="content/email.png" alt="Email icon" width="30" height="30">
-                Email Me!
-            </a>
+        <aside class="quick-links-container">
+            <h3 class="quick-links-header">Quick Links</h3>
+            <div class="quick-links-content">
+                <a class="quick-link" href="https://www.linkedin.com/in/chantal-barrett/" target="_blank">
+                    <img class="quick-link-image" src="content/linkedin.png" alt="LinkedIn icon">
+                    <span>LinkedIn</span>
+                </a>
+            
+                <a class="quick-link" href="https://github.com/chantal-barrett/CS601" target="_blank">
+                    <img class="quick-link-image" src="content/gitlogo.png" alt="Git icon">
+                    <span>Git</span>
+                </a>
+            
+                <a class="quick-link" href="mailto:chantalb@bu.edu">
+                    <img class="quick-link-image" src="content/email.png" alt="Email icon">
+                    <span>Email Me</span>
+                </a>
+            </div>
         </aside>
 
         <!-- The main content of the page -->

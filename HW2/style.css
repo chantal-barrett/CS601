@@ -4,12 +4,9 @@
     --pink: #FFC0CB;
     --white: #FFFFFF;
     --light-gray: #EEEEEE;
+    --gray: #2A2A2A;
 }
 
-/* @font-face {
-    font-family: 'Montserrat';
-    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
-} */
 * {
     font-family: 'Montserrat', sans-serif;
 }
@@ -49,6 +46,68 @@
     border-bottom: 1px solid pink;
     margin: 10px 50px;
     padding: 15px;
+}
+
+/* Quick Links */
+.quick-links-container {
+    position: fixed;
+    right: 0;
+    background: var(--pink);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    z-index: 100;
+    box-shadow: 0 0 10px var(--light-gray);
+}
+
+.quick-links-header {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.quick-links-container:hover .quick-links-header {
+    padding-bottom: 15px;
+}
+
+.quick-links-content {
+    border-top: 1px solid var(--white);
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+    height: 0;
+}
+
+
+.quick-links-container:hover .quick-links-content {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    padding-top: 15px;
+}
+
+.quick-link {
+    text-decoration: none;
+    color: var(--gray);
+    margin-bottom: 15px;
+    padding-right: 5px;
+}
+
+.quick-link:last-of-type {
+    margin-bottom: 0;
+}
+
+.quick-link:hover {
+    background: var(--white);
+}
+
+.quick-link-image {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
 
 /* Home page (index.html) */
@@ -138,7 +197,7 @@
 
 .page-link {
     text-decoration: none;
-    color: #2a2a2a;
+    color: var(--gray);
 }
 
 .page-link-title {
@@ -159,7 +218,7 @@
 
 .page-link-description {
     font-size: 1rem;
-    color: #2a2a2a;
+    color: var(--gray);
 }
 
 /* Experience page (experience.html) */
@@ -186,7 +245,7 @@
     content: ' ';
     width: 43px;
     height: 43px;
-    background-color: #2a2a2a;
+    background-color: var(--gray);
     border-radius: 100%;
     position: absolute;
     left: -62px;
@@ -234,7 +293,7 @@
 }
 
 .activty-left .image-caption {
-    background: #2a2a2a;
+    background: var(--gray);
     color: var(--pink);
 }
 
@@ -318,7 +377,7 @@
 #submit:hover {
     cursor: pointer;
     box-shadow: 0 10px 30px 0 rgb(51 51 51 / 50%);
-    background-color: #2a2a2a;
+    background-color: var(--gray);
     color: pink;
 }
 
@@ -493,7 +552,7 @@
 /* General styles */
 
 .main-container {
-    background-color: #2a2a2a;
+    background-color: var(--gray);
     padding: 15px;
 }
 
