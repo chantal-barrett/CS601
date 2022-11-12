@@ -38,7 +38,7 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
-    background: pink;
+    background: var(--pink);
     color: black;
 }
 
@@ -51,7 +51,7 @@
 
 .hero-description {
     text-align: center;
-    border-bottom: 1px solid pink;
+    border-bottom: 1px solid var(--pink);
     margin: 10px 50px;
     padding: 15px;
 }
@@ -59,6 +59,14 @@
 .main-container {
     max-width: 1400px;
     margin: auto;
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    background: var(--pink);
+    padding: 4px;
+    margin-top: 10px;
 }
 
 /* Quick Links */
@@ -406,6 +414,7 @@
 .accolade-section {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .accolade {
@@ -596,6 +605,7 @@
     /* Accolade - Desktop */
     .accolade-section {
         flex-wrap: nowrap;
+        flex-direction: row;
     }
     
     .accolade {
