@@ -1,0 +1,39 @@
+/* Expertise page (expertise.html) */
+
+.expertise-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.expertise-section {
+    padding: 15px;
+    margin: 15px;
+    background-color: var(--pink);
+    text-align: center;
+}
+
+.expertise-content {
+    text-align: left;
+    animation: appear 1s;
+}
+
+.expertise-icon {
+    width: 100px;
+    height: 100px;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+
+    .expertise-container {
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    
+    .expertise-section {
+        width: 33%;
+        box-shadow: 0 0 10px var(--light-gray);
+    }
+}

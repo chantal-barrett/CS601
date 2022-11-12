@@ -1,0 +1,34 @@
+/* Education page (education.html) */
+
+.college {
+    padding: 30px;
+    background: var(--light-gray);
+    margin-bottom: 30px;
+}
+
+/* .college-icon {
+    width: 70px;
+    height: 70px;
+    vertical-align: middle;
+    margin-right: 15px;
+} */
+
+.college-year {
+    border-bottom: 1px solid var(--pink);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.degree {
+    text-transform: uppercase;
+}
+
+.courses-table {
+    margin: 15px auto;
+}
+
+.courses-header {
+    padding: 5px;
+    background: var(--pink);
+    margin-bottom: 10px;
+}

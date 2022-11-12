@@ -1,0 +1,42 @@
+/* Accolades Page (accolades.html) */
+
+.accolade-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.accolade {
+    padding: 15px;
+    margin: 15px;
+    background-color: var(--pink);
+}
+
+.accolade-title {
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.accolade p {
+    line-height: 2em;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+
+    .accolade-section {
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    
+    .accolade {
+        width: 33%;
+        box-shadow: 0 0 10px var(--light-gray);
+    }
+
+}
