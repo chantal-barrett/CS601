@@ -15,7 +15,7 @@
 .expertise-section {
     padding: 15px;
     margin: 15px;
-    background-color: var(--pink);
+    background: linear-gradient(var(--white) 1%, var(--pink));
     text-align: center;
 }
 
