@@ -82,7 +82,7 @@
         display: block;
         background-color: var(--light-gray);
         text-align: center;
-        min-height: 540px;
+        padding-bottom: 15px;
     }
 
     #home-hero-desktop:hover .home-hero-description {
