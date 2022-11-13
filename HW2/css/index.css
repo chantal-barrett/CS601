@@ -29,7 +29,6 @@
     border-radius: 100%;
     border: 17px solid var(--white);
     position: relative;
-    top: -30px;
     width: 30%;
     height: 30%;
 }
@@ -118,6 +117,10 @@
         transition: all 1s, opacity 0.5s ease;
         margin: 0;
         font-size: 0rem;
+    }
+
+    .chantal-img {
+        top: -30px;
     }
 
     .page-links {

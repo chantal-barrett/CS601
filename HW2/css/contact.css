@@ -110,9 +110,9 @@
 }
 
 /* Mobile and Tablet */
+
 @media screen and (max-width: 1023.9px) {
 
-    /* Contact - Mobile/Tablet */
     .contact-section {
         flex-direction: column;
     }

@@ -8,8 +8,17 @@
 
 /* Keyframes */
 @keyframes appear {
-    from { display: none; }
-    to {display: block; }
+    /* from { visibility: hidden; }
+    to { visibility: visible; } */
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* General styles */
@@ -18,13 +27,32 @@
     font-family: 'Montserrat', sans-serif;
     /* box-sizing: border-box;
     padding: 0; */
-    margin: 0;
+    /* margin: 0; */
 }
 
 body {
+    box-sizing: border-box;
     width: 100%;
     margin: 0 auto;
     max-width: 1500px;
+}
+
+.fadein {
+    animation: appear 1s;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 5px;
+    position: relative;
+    background: var(--light-gray);
+}
+
+.logo-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 /* Hero */
@@ -35,6 +63,7 @@ body {
 .hero-media {
     overflow: hidden;
     height: 200px;
+    filter: grayscale(100%);
 }
 
 .hero-video {
@@ -90,6 +119,7 @@ nav ul {
     list-style: none;
     padding: 10px;
     width: 100%;
+    margin: 5px;
 }
 
 nav ul li {
@@ -136,9 +166,16 @@ nav a:hover {
 .footer {
     width: 100%;
     text-align: center;
+    font-size: 1.5rem;
+    height: 75px;
+    line-height: 75px;
     background: var(--pink);
     padding: 4px;
-    margin-top: 10px;
+    margin: 25px 0px;
+}
+
+.footer p {
+    margin: 0;
 }
 
 /* Media Queries */
@@ -171,12 +208,17 @@ nav a:hover {
 
 }
 
-/* Mobile and Tablet */
-@media screen and (max-width: 1023.9px) {
-
+/* Tablet and Desktop */
+@media screen and (min-width: 480px) {
+    .logo-container {
+        background: none;
+    }
 }
 
 /* Mobile */
 @media screen and (max-width: 479.9px) {
-
+    .socials {
+        display: none;
+        visibility: hidden;
+    }
 }
