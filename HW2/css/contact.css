@@ -8,6 +8,7 @@
 .contact-section {
     background: var(--white);
     display: flex;
+    flex-direction: column;
     padding: 40px;
 }
 
@@ -91,6 +92,7 @@
         max-width: 1000px;
         margin: auto;
         padding: 70px 40px;
+        flex-direction: row;
     }
     
     .contact-content {
@@ -107,13 +109,4 @@
         margin-top: 0;
     }
 
-}
-
-/* Mobile and Tablet */
-
-@media screen and (max-width: 1023.9px) {
-
-    .contact-section {
-        flex-direction: column;
-    }
 }

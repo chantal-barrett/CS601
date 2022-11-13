@@ -75,6 +75,7 @@
 }
 
 /* Desktop */
+
 @media screen and (min-width: 1024px) {
 
     #home-hero-desktop {
@@ -103,10 +104,6 @@
         font-size: 10rem;
         text-transform: uppercase;
         font-weight: 700;
-        /* background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        background-image: url('https://media-exp1.licdn.com/dms/image/C4E03AQHwhKm1EQhXBw/profile-displayphoto-shrink_400_400/0/1571319885798?e=1672876800&v=beta&t=30KO1WZ2T1ddbVDZYmHPpHO7D8x_huk3woEafa72Yy8'); */
         transition: all 1s;
         margin: 0;
     }
