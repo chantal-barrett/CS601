@@ -48,6 +48,10 @@
     padding: 15px;
 }
 
+.page-link-option:hover {
+    background-color: var(--white);
+}
+
 .page-link {
     text-decoration: none;
     color: var(--gray);
@@ -59,10 +63,6 @@
     margin: 0;
 }
 
-.page-link-option:hover {
-    background-color: var(--white);
-}
-
 .page-link-image {
     border-radius: 100%;
     border: 17px solid var(--white);
@@ -72,6 +72,7 @@
 .page-link-description {
     font-size: 1rem;
     color: var(--gray);
+    margin: 5px 0px 0px 0px;
 }
 
 /* Desktop */
@@ -124,16 +125,26 @@
         background-position-y: -400px;
     }
 
+    .page-link-option {
+        width: 270px;
+    }
+
+    .page-link-option:hover .page-link-content{
+        animation: appear .4s;
+        visibility: visible;
+        opacity: 1;
+        font-size: 2rem;
+    }
+
     .page-link-content {
         visibility: hidden;
         opacity: 0;
-        transition: all 1s, opacity 0.5s ease;
         margin: 0;
         position: absolute;
         left: 40%;
         margin-right: 30px;
         top: 30px;
-        background: #fff;
+        background: var(--white);
         height: calc(100% - 60px);
         width: calc(60% - 30px);
         display: flex;
@@ -141,18 +152,11 @@
         justify-content: center;
     }
 
-    .page-link-option:hover .page-link-content {
-        visibility: visible;
-        opacity: 1;
-        font-size: 2rem;
-    }
-
-    .page-link-option {
-        width: 200px;
-    }
-
     .page-link-description {
         font-size: 1.5rem;
         text-align: center;
+        margin: 0px 30px;
+        border-bottom: 7px solid var(--pink);
+        padding: 15px;
     }
 }
