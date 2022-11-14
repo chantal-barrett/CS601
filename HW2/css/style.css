@@ -30,6 +30,7 @@ body {
     width: 100%;
     margin: 0 auto;
     max-width: 1500px;
+    overflow-x: hidden;
 }
 
 .fadein {
@@ -92,7 +93,7 @@ body {
 
 .page-title {
     color: var(--gray);
-    font-size: 4.37rem;
+    font-size: 2.7rem;
     text-align: center;
     text-transform: uppercase;
     padding: 30px;
@@ -115,7 +116,7 @@ body {
 nav {
     padding: 5px;
     background: linear-gradient(45deg, var(--white) 1%, var(--pink));
-    overflow: scroll;
+    overflow-x: auto;
 }
 
 nav ul {
@@ -152,6 +153,7 @@ nav a:hover {
     top: 25vh;
     z-index: 1;
     box-sizing: border-box;
+    overflow-y: hidden;
 }
 
 .social {
@@ -171,7 +173,6 @@ nav a:hover {
 /* Footer */
 
 .footer {
-    width: 100%;
     text-align: center;
     font-size: 1.5rem;
     height: 75px;
@@ -224,6 +225,7 @@ nav a:hover {
 
     .page-title {
         letter-spacing: 5px;
+        font-size: 4.37rem;
     }
 
 }
