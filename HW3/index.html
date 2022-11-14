@@ -6,9 +6,10 @@
         <meta name="description" content="This is a simple calculator that adds two numbers using JavaScript">
         <meta name="keywords" content="Boston Univeristy, CS601, Chantal, calculator">
         <title>Chantal Barrett</title>
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <script src="script.js"></script>
+        <script src="calculate.js"></script>
         
         <header>
             <svg width="133.502" height="70.601" viewBox="0 0 133.502 70.601" xmlns="http://www.w3.org/2000/svg">
@@ -18,7 +19,50 @@
         </header>
 
         <!-- The main content of the page -->
-        <main>          
+        <main>
+
+            <section id="welcome-container">
+                <h2 class="welcome">Welcome!</h2>
+                <label for="name">Please enter your name to get started:</label>
+                <input id="name" type="text" required>
+                <button onclick="submitName()">Go</button>
+            </section>
+            
+            <section id="calculator-container" class="hide">
+                <h2 id="usersName">Welcome!</h2>
+
+                <div class="calculator">
+                    <p>Please enter two numbers to add:</p>
+                    <label for="numberOne">Number One:</label>
+                    <input id="numberOne" type="number" placeholder="Enter a number" required>
+                    <br>
+                    <br>
+                    <label for="numberTwo">Number Two:</label><br>
+                    <input id="numberTwo" type="number" placeholder="Enter a number" required></input>
+                    <br>
+                    <br>
+                    <button onclick="calculate()">Calculate</button>
+                    <p id="error-message" class="hide">Whoops! The numbers you have added are not valid numbers. Please try entering valid numbers</p>
+                </div>
+
+                <div id="result-container" class="hide">
+                    <!-- The sum of your two numbers is: -->
+                    <p id="result"></p> 
+
+                    <!-- That is a big number/ that is a small number -->
+                    <p id="result-size"></p>
+
+                    <!-- Prompt the user to add more numbers -->
+                    <p>Do you want to add more numbers?</p>
+                    <input id="yes" type="checkbox">Yes</input>
+                    <input id="no" type="checkbox">No</input>
+                </div>
+
+                <div id="thank-you-container" class="hide">
+                    <p>Thank you for using Chantal's Calculator!</p>
+                </div>
+
+            </section>
         </main>
 
         <footer>
