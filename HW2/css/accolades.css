@@ -39,6 +39,15 @@
     line-height: 2em;
 }
 
+/* Media Queries */
+
+/* Print only */
+@media print {
+    #accolades-hero {
+        height: 0px;
+    }
+}
+
 /* Desktop */
 
 @media screen and (min-width: 1024px) {

@@ -48,6 +48,15 @@
     margin-bottom: 10px;
 }
 
+/* Media Queries */
+
+/* Print only */
+
+@media print {
+    #education-hero {
+        height: 0px;
+    }
+}
 /* Desktop */
 
 @media screen and (min-width: 1024px) {

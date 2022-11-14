@@ -17,6 +17,7 @@ In trying my best to get an A on this assigment, I added many supplemental featu
 - For images, I used a combination of SVGs, images, and background images through CSS
 - Used CSS variables to ensure the same color scheme throughout the website
 - Used different style sheets to help organization and page performance, as there is no need to load CSS that isn't going to be used on a page
+- Support for print layouts (removed empty space of heros that have background images, no scroll bar in nav)
 
 ## Getting Started
 

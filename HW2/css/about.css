@@ -18,11 +18,13 @@
     text-transform: uppercase;
     text-align: center;
     font-size: 1.5rem;
-    padding-bottom: 5px;
+    padding-bottom: 7px;
+    margin-bottom: 0px;
 }
 
 .activity-details p {
     padding: 15px 0px;
+    margin-top: 0px;
 }
 
 .activity-right .activity-details-title {

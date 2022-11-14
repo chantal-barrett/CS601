@@ -44,6 +44,16 @@
     padding-top: 15px;
 }
 
+/* Media Queries */
+
+/* Print only */
+
+@media print {
+    #experience-hero {
+        height: 0px;
+    }
+}
+
 /* Desktop */
 
 @media screen and (min-width: 1024px) {

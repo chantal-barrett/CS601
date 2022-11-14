@@ -116,7 +116,6 @@ body {
 nav {
     padding: 5px;
     background: linear-gradient(45deg, var(--white) 1%, var(--pink));
-    overflow-x: auto;
 }
 
 nav ul {
@@ -174,7 +173,7 @@ nav a:hover {
 
 .footer {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     height: 75px;
     line-height: 75px;
     background: var(--pink);
@@ -187,6 +186,14 @@ nav a:hover {
 }
 
 /* Media Queries */
+
+/* Screen only */
+
+@media screen {
+    nav {
+        overflow-x: auto;
+    }
+}
 
 /* Desktop */
 

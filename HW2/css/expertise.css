@@ -30,6 +30,16 @@
     height: 100px;
 }
 
+/* Media Queries */
+
+/* Print only */
+
+@media print {
+    #expertise-hero {
+        height: 0px;
+    }
+}
+
 /* Desktop */
 
 @media screen and (min-width: 1024px) {
