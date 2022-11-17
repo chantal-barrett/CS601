@@ -19,20 +19,20 @@ function submitName() {
 
 function addNumbers() {
 
-    while(continueAdding) {
+    // while(continueAdding) {
         var numberOne = document.querySelector("#numberOne").value;
         var numberTwo = document.querySelector("#numberTwo").value;
 
         // Hide the error message
-        document.querySelector("#errorMessage").classList.add(hiddenClass);
+        document.querySelector("#error-message").classList.add(hiddenClass);
 
         // If the numbers are not valid numbers
         if(!isValidNumber(numberOne) || !isValidNumber(numberTwo)) {
             // Show error message
-            document.querySelector("#errorMessage").classList.remove(hiddenClass);
+            document.querySelector("#error-message").classList.remove(hiddenClass);
 
             // Break out of loop
-            break;
+            // break;
         }
 
         // Get the sum of the numbers
@@ -47,6 +47,25 @@ function addNumbers() {
         else if (sum <= 10) {
             document.querySelector("#result-size").textContent = "That is a small number.";
         }
+
+        // Hide the calculator
+        document.querySelector(".calculator").classList.add(hiddenClass);
+
+        // Show the result
+        document.querySelector("#result-container").classList.remove(hiddenClass);
+    // }
+}
+
+// Add event listeners for check boxes
+var checkBoxes = document.querySelectorAll("input");
+for (i = 0; i < checkBoxes.length; i++) {
+    var value = checkBoxes[i].value;
+
+    if (value == "no") {
+        // Hide page content
+    }
+    else if (value == "yes") {
+        // Continue loop
     }
 }
 

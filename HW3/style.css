@@ -1,3 +1,90 @@
 .hide {
     display: none;
 }
+
+* {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.main-container {
+    /* background-image: linear-gradient(270deg,#fff 49.9%, #2a2a2a 50%); */
+    /* background-image: linear-gradient(270deg,#fff 49.9%, pink 50%); */
+    background: rgb(255,252,255);
+    background: linear-gradient(270deg, rgba(255,252,255,1) 0%, rgba(213,254,253,1) 100%, rgba(0,212,255,1) 100%);
+    /* background: url('calc.jpg'); */
+    background-repeat: no-repeat;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    padding: 30px;
+}
+
+#welcome-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    margin-bottom: 15px;
+}
+
+.heading {
+    font-size: 15vw;
+    /* color: #fff; */
+    /* mix-blend-mode: difference; */
+    /* position: absolute; */
+    /* top: 15px; */
+    margin: 15px auto;
+
+}
+
+.input-container {
+    /* position: absolute;
+    right: 0;
+    top: 40%; */
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome {
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+}
+
+label {
+    width: 100%;
+    margin: 30px 0;
+}
+
+#name {
+    margin-bottom: 30px;
+    font-size: 30px;
+    background: transparent;
+    border: 1px solid #2a2a2a;
+}
+
+button {
+    margin: auto;
+    min-width: 50%;
+    font-size: 1.2rem;
+    padding: 5px 0;
+    border-radius: 32px;
+}
+
+/* Media Queries (Desktop) */
+
+@media screen and (min-width: 1024px) {
+
+    #welcome-container {
+        flex-direction: row;
+    }
+
+    img {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 0;
+    }
+}
