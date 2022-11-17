@@ -1,0 +1,162 @@
+/* Home page (index.html) */
+#home-hero-desktop {
+    display: none;
+}
+
+.home-title {
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+
+.home-description {
+    text-align: center;
+    margin: 0 10%;
+    line-height: 24px;
+}
+
+.home-header {
+    text-align: center;
+    margin: 30px 10%;
+    padding: 15px;
+    background: var(--pink);
+}
+
+.home-overview {
+    text-align: center;
+}
+
+.chantal-img {
+    border-radius: 100%;
+    border: 17px solid var(--white);
+    position: relative;
+    width: 30%;
+    height: 30%;
+}
+
+.page-links {
+    list-style: none;
+    position: relative;
+    background: url('../content/selfie.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+}
+
+.page-link-option {
+    background-color:var(--pink);
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.page-link-option:hover {
+    background-color: var(--white);
+}
+
+.page-link {
+    text-decoration: none;
+    color: var(--gray);
+}
+
+.page-link-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.page-link-image {
+    border-radius: 100%;
+    border: 17px solid var(--white);
+    position: relative;
+}
+
+.page-link-description {
+    font-size: 1rem;
+    color: var(--gray);
+    margin: 5px 0px 0px 0px;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+
+    #home-hero-desktop {
+        display: block;
+        background-color: var(--light-gray);
+        text-align: center;
+        padding-bottom: 15px;
+    }
+
+    #home-hero-desktop:hover .home-hero-description {
+        visibility: visible;
+        opacity: 1;
+        font-size: 2rem;
+        margin: 7px;
+    }
+
+    #home-hero-desktop:hover #first-name {
+        transform: translateY(-10px);
+    }
+
+    #home-hero-desktop:hover #last-name {
+        transform: translateY(10px);
+    }
+
+    .hero-name {
+        font-size: 10rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        transition: all 1s;
+        margin: 0;
+    }
+
+    .home-hero-description {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s, opacity 0.5s ease;
+        margin: 0;
+        font-size: 0rem;
+    }
+
+    .chantal-img {
+        top: -30px;
+    }
+
+    .page-links {
+        background-position-y: -400px;
+    }
+
+    .page-link-option {
+        width: 270px;
+    }
+
+    .page-link-option:hover .page-link-content{
+        animation: appear .4s;
+        visibility: visible;
+        opacity: 1;
+        font-size: 2rem;
+    }
+
+    .page-link-content {
+        visibility: hidden;
+        opacity: 0;
+        margin: 0;
+        position: absolute;
+        left: 40%;
+        margin-right: 30px;
+        top: 30px;
+        background: var(--white);
+        height: calc(100% - 60px);
+        width: calc(60% - 30px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .page-link-description {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0px 30px;
+        border-bottom: 7px solid var(--pink);
+        padding: 15px;
+    }
+}

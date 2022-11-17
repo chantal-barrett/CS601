@@ -1,0 +1,90 @@
+/* Experience page (experience.html) */
+
+#experience-hero {
+    /* Background image from Adobe Stock */
+    background-image: url('../content/working.jpeg');
+    background-size: cover;
+    background-position-y: 50%;
+}
+
+.timeline {
+    border-left: 7px solid var(--pink);
+    margin-left: 50px;
+}
+
+.work {
+    position: relative;
+    margin: 70px 30px 30px 30px;
+    padding: 10px 30px;
+    background-color: var(--light-gray);
+    width: fit-content;
+    border-radius: 17px
+}
+
+.years:before {
+    content: ' ';
+    width: 43px;
+    height: 43px;
+    background-color: var(--white);
+    border-radius: 100%;
+    position: absolute;
+    left: -62px;
+    top: 0px;
+    border: 7px solid var(--pink);
+}
+
+.job-title {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.responsibilities {
+    border-top: 1px solid var(--pink);
+    padding-top: 15px;
+}
+
+/* Media Queries */
+
+/* Print only */
+
+@media print {
+    #experience-hero {
+        height: 0px;
+    }
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+
+    .work {
+        min-width: 600px;
+        margin-right: 30px;
+        margin-left: 70px;
+    }
+
+    .work:hover .years:before {
+        background-color: var(--pink);
+    }
+
+    .years:before {
+        left: -102px;
+    }
+
+    .responsibilities {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s, opacity 0.5s ease;
+        font-size: 0rem;
+        border-top: 1px solid var(--pink);
+        padding-top: 0;
+    }
+    
+    .work:hover .responsibilities {
+        visibility: visible;
+        opacity: 1;
+        font-size: 1rem;
+        padding-top: 15px;
+    }
+}

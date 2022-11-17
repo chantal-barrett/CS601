@@ -1,0 +1,64 @@
+/* Accolades Page (accolades.html) */
+
+#accolades-hero {
+    /* Background image from Adobe Stock */
+    background-image: url('../content/award-hero.png');
+    background-size: cover;
+    background-position-y: 50%;
+}
+
+.accolade-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.accolade {
+    padding: 15px;
+    margin: 15px;
+    background-color: var(--pink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accolade-title {
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.accolade-received {
+    margin: 0;
+}
+
+.accolade p {
+    line-height: 2em;
+}
+
+/* Media Queries */
+
+/* Print only */
+@media print {
+    #accolades-hero {
+        height: 0px;
+    }
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+
+    .accolade-section {
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    
+    .accolade {
+        width: 33%;
+        box-shadow: 0 0 10px var(--light-gray);
+    }
+}

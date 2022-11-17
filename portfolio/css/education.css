@@ -1,0 +1,74 @@
+/* Education page (education.html) */
+
+#education-hero {
+    /* Background image from Adobe Stock */
+    background-image: url('../content/education.jpeg');
+    background-size: cover;
+    background-position-y: 50%;
+}
+.college {
+    padding: 30px;
+    background: var(--light-gray);
+    margin: 30px;
+}
+
+.college-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.college-header-description {
+    padding-left: 1rem;
+    text-align: center;
+}
+
+.college-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.college-year {
+    border-bottom: 1px solid var(--pink);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.degree {
+    text-transform: uppercase;
+}
+
+.courses-table {
+    margin: 15px auto;
+}
+
+.courses-header {
+    padding: 5px;
+    background: var(--pink);
+    margin-bottom: 10px;
+}
+
+/* Media Queries */
+
+/* Print only */
+
+@media print {
+    #education-hero {
+        height: 0px;
+    }
+}
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+    .college-header {
+        flex-direction: row;
+    }   
+
+    .college-header-description {
+        text-align: left;
+    }
+
+    .college-description {
+        margin-left: 65px;
+    }
+}

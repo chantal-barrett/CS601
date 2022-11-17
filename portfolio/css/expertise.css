@@ -1,0 +1,56 @@
+/* Expertise page (expertise.html) */
+
+#expertise-hero {
+    background-image: url('../content/sunset.jpg');
+    background-size: cover;
+    background-position-y: 37%;
+}
+
+.expertise-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.expertise-section {
+    padding: 15px;
+    margin: 15px;
+    background: linear-gradient(var(--white) 1%, var(--pink));
+    text-align: center;
+}
+
+.expertise-content {
+    line-height: 1.5rem;
+    text-align: left;
+    border-top: 1px solid var(--light-gray);
+}
+
+.expertise-icon {
+    width: 100px;
+    height: 100px;
+}
+
+/* Media Queries */
+
+/* Print only */
+
+@media print {
+    #expertise-hero {
+        height: 0px;
+    }
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+
+    .expertise-container {
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    
+    .expertise-section {
+        width: 33%;
+        box-shadow: 0 0 10px var(--light-gray);
+    }
+}
