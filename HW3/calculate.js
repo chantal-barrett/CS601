@@ -1,85 +1,139 @@
-// Declare needed variables
-const hiddenClass = "hide";
-var continueAdding = true;
+// Ensure the script is run only once all of the DOM content is loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Welcome the visitor with an alert
+    alert("Welcome to Chantal's Caculator!");
 
-// Function for when the user submits their name
-function submitName() {
-    // Get the user's name
-    var name = document.querySelector("#name").value;
+    // Declare needed variable
+    const hiddenClass = "hide";
 
-    // Change the text to display the user's name
-    document.querySelector("#usersName").textContent = "Welcome, " + name + "!";
+    // Add event listener for when the user submits their name
+    document.getElementById("submit-name").addEventListener("click", function() {
+        
+        // Get the user's name
+        let name = document.querySelector("#name").value;
 
-    // Hide welcome screen
-    document.querySelector("#welcome-container").classList.add(hiddenClass);
+        // If the user did not enter their name, prompt them for their name using a prompt
+        // Note: this is to fufill the requirement of using a prompt and a loop
+        if (name === "") {
+            let validName = false;
 
-    // Prompt the user to enter numbers
-    document.querySelector("#calculator-container").classList.remove(hiddenClass);
-}
-
-function addNumbers() {
-
-    // while(continueAdding) {
-        var numberOne = document.querySelector("#numberOne").value;
-        var numberTwo = document.querySelector("#numberTwo").value;
-
-        // Hide the error message
-        document.querySelector("#error-message").classList.add(hiddenClass);
-
-        // If the numbers are not valid numbers
-        if(!isValidNumber(numberOne) || !isValidNumber(numberTwo)) {
-            // Show error message
-            document.querySelector("#error-message").classList.remove(hiddenClass);
-
-            // Break out of loop
-            // break;
+            // Continue to prompt the user for their name until they enter a valid name
+            while (!validName) {
+                name = prompt("Whoops! Please enter your name before we get started:");
+                // If the user clicks cancel, do not coninue in this event listener
+                if (name === null) {
+                    return;
+                }
+                // If the user did not enter an empty string
+                else if (name != "") {
+                    // Set valid name to true
+                    validName = true;
+                }
+            }
         }
 
-        // Get the sum of the numbers
-        var sum = calculateSum(numberOne, numberTwo);
+        // Display the user's name with an alert
+        alert("Welcome " + name + "!");
 
-        // Edit the text on the page so the user knows the sum of the numbers
-        document.querySelector("#result").textContent = "The sum of your two numbers is: " + sum;
+        // Update the DOM with the user's name
+        document.getElementById("usersName").innerText = "Welcome, " + name + "!";
 
+        // Hide the initial container and show the calculator
+        document.getElementById("welcome-container").classList.add(hiddenClass);
+        document.getElementById("calculator-container").classList.remove(hiddenClass);
+    });
+
+    // Add event listener for when the user submits two numbers 
+    document.getElementById("add-numbers").addEventListener("click", function() {
+        
+        // Get the user's input
+        let numberOne = document.getElementById("numberOne").value;
+        let numberTwo = document.getElementById("numberTwo").value;
+
+        // If the user did not enter valid numbers
+        if (!validNumber(numberOne) || !validNumber(numberTwo)) {
+            // Show the error message
+            document.getElementById("error-message").classList.remove(hiddenClass);
+
+            // If the first number is not a valid number, focus on that field
+            if (!validNumber(numberOne)) {
+                document.getElementById("numberOne").focus();
+            }
+            // Otherwise, the second number must be invalid so focus on this field
+            else {
+                document.getElementById("numberTwo").focus();
+            }
+
+            // No need to run any other code in this event listener
+            return;
+        }
+
+        // Add the two numbers
+        let sum = addNumbers(numberOne, numberTwo);
+
+        // Update the results container
+        document.getElementById("result").innerHTML = `<p>The sum of your two numbers is:</p><p id="sum">` + sum + `</p>`;
         if (sum > 10) {
-            document.querySelector("#result-size").textContent = "That is a big number.";
+            document.getElementById("result-size").innerText = "That is a big number.";
         }
         else if (sum <= 10) {
-            document.querySelector("#result-size").textContent = "That is a small number.";
+            document.getElementById("result-size").innerText = "That is a small number.";
         }
 
-        // Hide the calculator
-        document.querySelector(".calculator").classList.add(hiddenClass);
+        // Show the results to the user
+        document.getElementById("calculator-container").classList.add(hiddenClass);
+        document.getElementById("result-container").classList.remove(hiddenClass);
 
-        // Show the result
-        document.querySelector("#result-container").classList.remove(hiddenClass);
-    // }
-}
+    });
 
-// Add event listeners for check boxes
-var checkBoxes = document.querySelectorAll("input");
-for (i = 0; i < checkBoxes.length; i++) {
-    var value = checkBoxes[i].value;
+    // Use loop to add event listeners for checkboxes
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener("click", function(event) {
 
-    if (value == "no") {
-        // Hide page content
+            document.getElementById("result-container").classList.add(hiddenClass);
+
+            // If the value is yes
+            if (event.currentTarget.getAttribute("name") === "yes") {
+                // Clear the check from the checkbox
+                event.currentTarget.checked = false;
+
+                // Clear the number fields
+                document.getElementById("numberOne").value = "";
+                document.getElementById("numberTwo").value = "";
+
+                // Show the calculator and hide the results
+                document.getElementById("calculator-container").classList.remove(hiddenClass);
+            }
+            // If the value is no
+            else if (event.currentTarget.getAttribute("name") === "no") {
+                // Thank the user for using the programming
+                document.getElementById("thank-you-container").classList.remove(hiddenClass);
+            }
+        });
     }
-    else if (value == "yes") {
-        // Continue loop
+
+    // Checks if the specified number is a valid number
+    function validNumber(number) {
+
+        // If the user doesn't enter a valid number (use isNaN to determine if the value is a valid number (isNaN will return true if the data is not a number))
+        if (isNaN(number) || number === "") {
+
+            // Return false, as this is not a valid number
+            return false;
+        }
+
+        // Return true, as this is a valid number
+        return true;
     }
-}
 
-function calculateSum(numberOne, numberTwo) {
-    return parseInt(numberOne) + parseInt(numberTwo);
-}
+    // Adds two numbers together
+    function addNumbers(numberOne, numberTwo) {
 
-function isValidNumber(number) {
+        // Note: no need to validate these again, as they were validated when we called the validNumber() function
+        let sum = parseInt(numberOne) + parseInt(numberTwo);
 
-    // Use isNaN to determine if the value is a valid number (isNaN will return true if the data is not a number)
-    if (isNaN(number)) {
-        return false;
+        // Return the sum of the two numbers
+        return sum;
     }
-
-    // If the function did not return at this point, the number is a valid number so return true
-    return true;
-}
+});

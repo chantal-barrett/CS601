@@ -4,12 +4,12 @@
 // // Prompt the user for their name
 // Declare needed variables
 const hiddenClass = "hide";
-var continueAdding = true;
+let continueAdding = true;
 
 // Function for when the user submits their name
 function submitName() {
     // Get the user's name
-    var name = document.querySelector("#name").value;
+    let name = document.querySelector("#name").value;
 
     // Display the user's name with an alert
     alert("Welcome " + name + "!");
@@ -20,7 +20,7 @@ function submitName() {
 // Continuely prompt the user two enter two numbers until they decide not to
 function initCalculator() {
     while(continueAdding) {
-        var numbers = prompt("Please enter two numbers separated by a comma (,)");
+        let numbers = prompt("Please enter two numbers separated by a comma (,)");
 
         // If the user did not enter valid numbers
         if (validateNumbers(numbers) == false) {
@@ -32,7 +32,7 @@ function initCalculator() {
         }
 
         // If the numbers are valid, add them together
-        var sum = addNumbers(numbers);
+        let sum = addNumbers(numbers);
         alert("The sum of your two numbers is: " + sum);
 
         // If the sum of the numbers is greater than ten
@@ -47,7 +47,7 @@ function initCalculator() {
         }
 
         // Prompt the user if they want to add two numbers again
-        var response = prompt("Would you like to add two numbers again? (yes/no)");
+        let response = prompt("Would you like to add two numbers again? (yes/no)");
 
         // If the user says no, exit out of the program
         if (response == null || response.toLowerCase() == "no") {
@@ -63,16 +63,20 @@ function initCalculator() {
             continue;
         }
         else {
-            var validAnswer = false;
+            let validAnswer = false;
             
             while (!validAnswer) {
-                var answer = prompt("Whoops, please enter either yes or no: ");
+                let answer = prompt("Whoops, please enter either yes or no: ");
 
                 if (answer == null || answer.toLowerCase() == "no" || answer.toLowerCase() == "yes") {
                     validAnswer = true;
 
                     if (answer == null || answer.toLowerCase() == "no") {
                         continueAdding = false;
+
+                        // Thank the user for using the program
+                        document.querySelector("#welcome-container").classList.add(hiddenClass);
+                        document.querySelector("#thank-you-container").classList.remove(hiddenClass);
                     }
                 }                
             }
@@ -89,8 +93,8 @@ function validateNumbers(numbers) {
         return false;
     }
 
-    var numberOne = numbers.split(",")[0];
-    var numberTwo = numbers.split(",")[1];
+    let numberOne = numbers.split(",")[0];
+    let numberTwo = numbers.split(",")[1];
 
     // If the user doesn't enter two numbers (use isNaN to determine if the value is a valid number (isNaN will return true if the data is not a number))
     if (numberOne == undefined || numberTwo == undefined || isNaN(numberOne) || isNaN(numberTwo)) {
@@ -106,11 +110,11 @@ function validateNumbers(numbers) {
 // Adds the numbers together
 function addNumbers(numbers) {
 
-    var numberOne = numbers.split(",")[0];
-    var numberTwo = numbers.split(",")[1];
+    let numberOne = numbers.split(",")[0];
+    let numberTwo = numbers.split(",")[1];
 
     // Note: no need to validate these again, as they were validated when we called the validateNumbers function
-    var sum = parseInt(numberOne) + parseInt(numberTwo);
+    let sum = parseInt(numberOne) + parseInt(numberTwo);
 
     return sum;
 }
