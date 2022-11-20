@@ -114,6 +114,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Checks if the specified number is a valid number
+    // Note, this is not necessarily required as the input boxes are restricted to numbers, 
+    // but I wanted to include a validation function in case the input types were to be changed in the future
     function validNumber(number) {
 
         // If the user doesn't enter a valid number (use isNaN to determine if the value is a valid number (isNaN will return true if the data is not a number))
