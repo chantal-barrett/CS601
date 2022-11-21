@@ -12,10 +12,10 @@ The website uses media queries to provide a different experience to users based 
 
 In trying my best to get an A on this assigment, I plan to add many supplemental features to my website including:
 - 10 pages
-- Researched CSS and JavaScript features not covered so far in class (i.e. scrolling behavior - note I still need to work out some issues on this page)
-- Used different style sheets and JavaScript files to help organization and page performance, as there is no need to load files that aren't going to be used on a page
+- Researching CSS and JavaScript features not covered in class (i.e. scrolling behavior - note I still need to work out some issues on this page)
+- Use different style sheets and JavaScript files to help organization and page performance, as there is no need to load files that aren't going to be used on a page
 - Support for print layouts (removed empty space of heros that have background images, no scroll bar in nav)
-- Created a contact form that adds users to a database along with their message. The plan is to implement a feature where they can subscribe/unsubscribe from emails by deleting their information from the database
+- Create a contact form that adds users to a database along with their message. The plan is to implement a feature where they can subscribe/unsubscribe from emails by deleting their information from the database
 
 ### Questions for Facilitator
 - What else can I do to improve this website to best exceed requirements?
