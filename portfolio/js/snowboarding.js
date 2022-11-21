@@ -1,5 +1,5 @@
 // JavaScript file to support the scrolling behavior on the snowboarding.html page
-const scrollElement = document.querySelector("h1");
+const scrollElement = document.querySelector(".snowboarding-title");
 const description = document.querySelector(".description");
 const footer = document.querySelector("footer");
 
@@ -7,8 +7,8 @@ const footer = document.querySelector("footer");
 document.body.querySelector("main").classList.remove("noscript");
 
 // Set the intial properties
-document.body.style.setProperty('--bodyHeight', (document.querySelector("h1").offsetWidth * 1.17) + "px");
-document.body.style.setProperty('--descriptionPos', "-" + (document.querySelector("h1").offsetWidth) + "px");
+document.body.style.setProperty('--bodyHeight', (scrollElement.offsetWidth * 1.17) + "px");
+document.body.style.setProperty('--descriptionPos', "-" + (scrollElement.offsetWidth) + "px");
 document.body.style.setProperty('--currentPos', "0px");
 
 // Add an event listener for when the user scrolls
@@ -23,7 +23,7 @@ window.addEventListener('scroll', () => {
     }
 
     // If the title is completely off the screen, freeze the description content
-    if (document.querySelector("h1").getBoundingClientRect().left < -1370) {
+    if (scrollElement.getBoundingClientRect().left < -1370) {
         description.classList.add("freeze");
     }
     else {
