@@ -159,7 +159,7 @@ fieldset {
     width: 50%;
     margin: auto;
     font-size: 22px;
-    animation: appear 2s;
+    animation: appear 1.7s;
 }
 
 legend {

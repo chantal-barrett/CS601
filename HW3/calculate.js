@@ -101,6 +101,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("numberOne").value = "";
                 document.getElementById("numberTwo").value = "";
 
+                // Clear the error field
+                document.getElementById("error-message").classList.add(hiddenClass);
+
                 // Show the calculator and hide the results
                 document.getElementById("calculator-container").classList.remove(hiddenClass);
             }
