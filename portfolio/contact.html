@@ -72,23 +72,25 @@
                 <form id="contact-form">
                     <div class="input-wrapper">
                         <label class="input-label" for="name">Name</label>
-                        <input class="form-input" id="name" type="text" placeholder="Enter you name" required>
+                        <input class="form-input" id="name" name="name" type="text" placeholder="Enter you name" required>
                     </div>
 
                     <div class="input-wrapper">
                         <label class="input-label" for="email">Email</label>
-                        <input class="form-input" id="email" type="text" placeholder="Enter your email" required>
+                        <input class="form-input" id="email" name="email" type="text" placeholder="Enter your email" required>
                     </div>
 
                     <div class="input-message-wrapper">
                         <label class="input-label" for="message">Message</label>
-                        <textarea class="form-input" id="message" placeholder="Enter your message" required></textarea>
+                        <textarea class="form-input" id="message" name="message" placeholder="Enter your message" required></textarea>
                     </div>
 
                     <input id="submit" type="submit" value="submit">
                 </form>
             </section>
         </main>
+
+        <script src="js/contact.js"></script>
 
         <footer class="footer">
             <p>Chantal Barrett | &copy; 2022</p>

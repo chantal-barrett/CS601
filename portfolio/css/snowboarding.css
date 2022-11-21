@@ -1,0 +1,73 @@
+@keyframes rotate {
+    from {
+        left: 0px;
+    }
+    to {
+        left: var(--currentPos);
+    }
+}
+
+body {
+    min-height: calc(var(--bodyHeight) + 100vh);
+}
+
+.description {
+    position: absolute;
+    bottom: var(--descriptionPos);
+    background-color: pink;
+    height: calc(100vh + 1000px);
+    width: 100%;
+}
+
+.freeze {
+    position: fixed;
+    top: 10px;
+}
+
+.snowboarding-hero {
+    background: url('../content/snowboarding-butter.jpg');
+    background-repeat: none;
+    filter: grayscale(1);
+    background-size: cover;
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+}
+
+.snowboarding-hero-media {
+    margin: 30px;
+    height: 400px;
+    overflow: hidden;
+    filter: grayscale(1);
+}
+
+.snowboarding-hero-video {
+    width: 100%;
+    margin-top: -100px;
+}
+
+.snowboarding-hero-title {
+    background: var(--white);
+}
+
+.logo-container {
+    position: fixed;
+}
+
+/* Tablet */
+
+@media screen and (min-width: 480px) {
+    .snowboarding-title {
+        position: fixed;
+        animation: rotate 1s linear infinite;
+        animation-play-state: paused;
+        /* Bind the animation to the scroll */
+        animation-delay: calc(var(--scroll) * -1s); 
+        display: inline-block;
+        font-size: 400px;
+        min-width: 100vw;
+        bottom: 0;
+        z-index: 1;
+        margin: 0;
+    }
+}
