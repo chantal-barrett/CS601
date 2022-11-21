@@ -8,6 +8,9 @@
     $email = $data->email;
     $comment = $data->message;
 
+    // TO DO: implement subscribe/unsubscribe functionality
+    // $subscribe = $data->subscribe; 
+
     // Add the message to the database only if all fields are provided
     if($contactName && $email && $comment) {
         try {

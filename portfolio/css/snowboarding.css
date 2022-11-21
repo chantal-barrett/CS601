@@ -7,6 +7,11 @@
     }
 }
 
+nav {
+    position: fixed;
+    top: 85px;
+}
+
 main {
     margin-top: 85px;
 }
@@ -60,6 +65,7 @@ main {
         background-color: pink;
         height: calc(100vh + 1000px);
         width: 100%;
+        z-index: 1000001;
     }
     
     .freeze {
