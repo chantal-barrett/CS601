@@ -44,8 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Add event listener for when the user submits two numbers 
-    document.getElementById("add-numbers").addEventListener("click", function() {
-        
+    document.getElementById("add-numbers").addEventListener("click", function() {      
         // Get the user's input
         let numberOne = document.getElementById("numberOne").value;
         let numberTwo = document.getElementById("numberTwo").value;
@@ -90,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let checkboxes = document.querySelectorAll('input[type="checkbox"]');
     for (let i = 0; i < checkboxes.length; i++) {
         checkboxes[i].addEventListener("click", function(event) {
-
+            // Hide the results container
             document.getElementById("result-container").classList.add(hiddenClass);
 
             // If the value is yes
@@ -107,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             // If the value is no
             else if (event.currentTarget.getAttribute("name") === "no") {
-                // Thank the user for using the programming
+                // Thank the user for using the program
                 document.getElementById("thank-you-container").classList.remove(hiddenClass);
             }
         });
@@ -133,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function addNumbers(numberOne, numberTwo) {
 
         // Note: no need to validate these again, as they were validated when we called the validNumber() function
-        let sum = parseInt(numberOne) + parseInt(numberTwo);
+        let sum = parseFloat(numberOne) + parseFloat(numberTwo);
 
         // Return the sum of the two numbers
         return sum;

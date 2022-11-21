@@ -1,7 +1,6 @@
 // Welcome the visitor with an alert
-// alert("Welcome to Chantal's Caculator!");
+alert("Welcome to Chantal's Caculator!");
 
-// // Prompt the user for their name
 // Declare needed variables
 const hiddenClass = "hide";
 let continueAdding = true;
