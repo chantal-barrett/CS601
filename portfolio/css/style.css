@@ -4,6 +4,7 @@
     --white: #FFFFFF;
     --light-gray: #EEEEEE;
     --gray: #2A2A2A;
+    --red: #FF0000;
 }
 
 /* Keyframes */
@@ -35,6 +36,10 @@ body {
 
 .fadein {
     animation: appear 1s;
+}
+
+.hidden {
+    display: none;
 }
 
 .logo-container {
@@ -174,8 +179,8 @@ nav a:hover {
 .footer {
     text-align: center;
     font-size: 1rem;
-    height: 75px;
-    line-height: 75px;
+    height: 30px;
+    line-height: 30px;
     background: var(--pink);
     padding: 4px;
     margin: 25px 0px;

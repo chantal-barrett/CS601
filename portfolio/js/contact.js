@@ -2,12 +2,12 @@ const contactForm = document.getElementById("contact-form");
 contactForm.addEventListener('submit', submitContactForm);
 
 function submitContactForm(event) {
-    
-    // Get the data from the form
-    let formData = {
-        'name' : document.getElementById("name").value,
-        'email' : document.getElementById("email").value,
-        'message' : document.getElementById("message").value,
+
+    // Hide all error messages
+    const hiddenClass = "hidden";
+    const errorMessages = document.querySelectorAll(".error-message");
+    for (let i = 0; i < errorMessages.length; i++) {
+        errorMessages[i].classList.add(hiddenClass);
     }
 
     let url = "./database/add_to_db.php";
@@ -15,13 +15,16 @@ function submitContactForm(event) {
     xhr.open("POST", url, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
+        // Send the data from the form
         'name' : document.getElementById("name").value,
         'email' : document.getElementById("email").value,
         'message' : document.getElementById("message").value,
+        'subscribe': document.getElementById("subscribe").checked
     }));
 
     xhr.onerror = function(e) {
-        // show error message
+        // Show error message
+        document.getElementById("submit-error").classList.remove(hiddenClass);
     }
     // stop the form from submitting the normal way and refreshing the page
     event.preventDefault();

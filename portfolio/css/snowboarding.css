@@ -7,51 +7,15 @@
     }
 }
 
-body {
-    min-height: calc(var(--bodyHeight) + 100vh);
-}
-
-.description {
-    position: absolute;
-    bottom: var(--descriptionPos);
-    background-color: pink;
-    height: calc(100vh + 1000px);
-    width: 100%;
-}
-
-.freeze {
-    position: fixed;
-    top: 10px;
-}
-
-.snowboarding-hero {
-    background: url('../content/snowboarding-butter.jpg');
-    background-repeat: none;
-    filter: grayscale(1);
-    background-size: cover;
-    height: 100vh;
-    position: fixed;
-    width: 100vw;
-}
-
-.snowboarding-hero-media {
-    margin: 30px;
-    height: 400px;
-    overflow: hidden;
-    filter: grayscale(1);
+.description p {
+    margin: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
 }
 
 .snowboarding-hero-video {
-    width: 100%;
-    margin-top: -100px;
-}
-
-.snowboarding-hero-title {
-    background: var(--white);
-}
-
-.logo-container {
-    position: fixed;
+    margin-top: -85px;
 }
 
 /* Tablet */
@@ -69,5 +33,70 @@ body {
         bottom: 0;
         z-index: 1;
         margin: 0;
+    }
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+    body {
+        min-height: calc(var(--bodyHeight) + 100vh);
+        margin: 0;
+    }
+
+    .snowboarding-logo-container {
+        /* position: fixed; */
+        height: 85px;
+    }
+    
+    .description {
+        position: absolute;
+        bottom: calc(var(--descriptionPos) - 85px);
+        background-color: pink;
+        height: calc(100vh + 1000px);
+        width: 100%;
+    }
+    
+    .freeze {
+        position: fixed;
+        top: 0px;
+    }
+    
+    .snowboarding-hero {
+        background: url('../content/snowboarding-butter.jpg');
+        background-repeat: none;
+        filter: grayscale(1);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        position: fixed;
+        width: 100vw;
+    }
+    
+    .snowboarding-hero-media {
+        margin: 30px;
+        height: 400px;
+        overflow: hidden;
+        filter: grayscale(1);
+    }
+    
+    .snowboarding-hero-video {
+        width: 100%;
+        margin-top: -100px;
+    }
+    
+    .snowboarding-hero-title {
+        background: var(--white);
+    }
+    
+    .logo-container {
+        position: fixed;
+    }
+    
+    footer {
+        position: fixed;
+        top: unset;
+        bottom: -30px;
+        width: 100%;
     }
 }
