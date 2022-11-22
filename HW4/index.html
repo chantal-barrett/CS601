@@ -28,30 +28,47 @@
                 <h2 class="welcome">Welcome!</h2>
                 <label for="name">Please complete the following form:</label>
 
-                <form name="form" action="<enter URL here>" method="POST" novalidate onsubmit="return validateForm();">
-                    <label for="firstName">First Name</label>
-                    <input id="firstName" name="firstName" type="text" placeholder="Please enter your first name" required>
-                    <p id="firstNameError" class="error hidden"></p>
+                <form class="form" name="form" action="<enter URL here>" method="POST" novalidate onsubmit="return validateForm();">
+                    <div class="text-input-wrapper">
+                        <div class="input-wrapper">
+                            <label for="firstName">FIRST NAME</label>
+                            <input id="firstName" name="firstName" type="text" placeholder="first name" required>
+                            <p id="firstNameError" class="error hidden"></p>
+                        </div>
 
-                    <label for="lastName">Last Name</label>
-                    <input id="lastName"name="lastName" type="text" placeholder="Please enter your last name" required>
-                    <p id="lastNameError" class="error hidden"></p>
+                        <div class="input-wrapper">
+                            <label for="lastName">LAST NAME</label>
+                            <input id="lastName"name="lastName" type="text" placeholder="last name" required>
+                            <p id="lastNameError" class="error hidden"></p>
+                        </div>
 
-                    <label for="facilitator">Facilitator</label>
-                    <input id="facilitator" name="facilitator" type="text" placeholder="Please enter the name of your facilitator" required>
-                    <p id="facilitatorError" class="error hidden"></p>
+                        <div class="input-wrapper">
+                            <label for="facilitator">FACILITATOR</label>
+                            <input id="facilitator" name="facilitator" type="text" placeholder="facilitator" required>
+                            <p id="facilitatorError" class="error hidden"></p>
+                        </div>
+                    </div>
 
-                    <fieldset>
-                        <legend>Please select your course:</legend>
-                        <input type="radio" id="CS601" name="course" value="CS601"><label for="CS601">CS601</label><br>
-                        <input type="radio" id="CS602" name="course" value="CS602"><label for="CS602">CS602</label><br>
-                    </fieldset>
+                    <div class="input-wrapper">
+                        <fieldset>
+                            <legend>Please select what you are inquiring about</legend>
+                            <div class="input-option"><input type="radio" id="assignment" name="inquiry" value="assignment"><label for="assignment">Assignment Question</label></div>
+                            <div class="input-option"><input type="radio" id="quiz" name="inquiry" value="quiz"><label for="quiz">Quiz Question</label></div>
+                            <div class="input-option"><input type="radio" id="final-exam" name="inquiry" value="final-exam"><label for="final-exam">Final Exam Question</label></div>
+                            <div class="input-option"><input type="radio" id="course-content" name="inquiry" value="course-content"><label for="course-content">Course Content Question</label></div>
+                            <div class="input-option"><input type="radio" id="other-inquiry" name="inquiry" value="other-inquiry"><label for="other-inquiry">Other</label></div>
+                        </fieldset>
+                    </div>
 
-                    <fieldset>
-                        <legend>Please select how you would like your facilitator to contact you back</legend>
-                        <input type="checkbox" id="email" name="email" value="email"><label for="email">Email</label><br>
-                        <input type="checkbox" id="phone" name="phone" value="phone"><label for="phone">Phone</label><br>
-                    </fieldset>
+                    <div class="input-wrapper">
+                        <fieldset>
+                            <legend>Please select how you would like your facilitator to contact you back</legend>
+                            <div class="input-option"><input type="checkbox" id="email" name="email" value="email"><label for="email">Email</label></div>
+                            <div class="input-option"><input type="checkbox" id="blackboard" name="blackboard" value="blackboard"><label for="blackboard">Blackboard Message</label></div>
+                            <div class="input-option"><input type="checkbox" id="call" name="call" value="call"><label for="call">Phone Call</label></div>
+                            <div class="input-option"><input type="checkbox" id="text-message" name="text-message" value="text-message"><label for="text-message">Text Message</label></div>
+                        </fieldset>
+                    </div>
                     
                     <input type="submit" id="submit" value="submit">
                 </form>

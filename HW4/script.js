@@ -1,19 +1,19 @@
 function validateForm() {
 
     // Get needed values to validate
-    var firstName = document.getElementById("firstName");
-    var lastName = document.getElementById("lastName");
-    var facilitator = document.getElementById("facilitator");
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const facilitator = document.getElementById("facilitator");
 
     // Hide all error fields
-    var errors = document.querySelectorAll(".error");
+    let errors = document.querySelectorAll(".error");
     for (i = 0; i < errors.length; i++) {
         errors[i].classList.add("hidden");
     }
 
     // If there is an error, we will use these to focus on the first incorrect field;
-    var isValid = true;
-    var firstInvalidField = "";
+    let isValid = true;
+    let firstInvalidField = "";
 
     // If first name consists of less than two characters
     if(firstName.value.length < 2) {
