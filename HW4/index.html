@@ -12,7 +12,6 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <script src="script.js"></script>
         
         <header>
             <svg width="133.502" height="70.601" viewBox="0 0 133.502 70.601" xmlns="http://www.w3.org/2000/svg">
@@ -25,10 +24,12 @@
         <main>
 
             <section id="welcome-container">
-                <h2 class="welcome">Welcome!</h2>
-                <label for="name">Please complete the following form:</label>
+                <div class="welcome-text">
+                    <h2 class="welcome">Welcome!</h2>
+                    <p>Please complete the following form:</p>
+                </div>
 
-                <form class="form" name="form" action="<enter URL here>" method="POST" novalidate onsubmit="return validateForm();">
+                <form class="form" name="form" action="https://cs601.bu-course-examples.com/hw4/380a98f5-5191-496f-8aa1-7acc1da83cc5" method="POST">
                     <div class="text-input-wrapper">
                         <div class="input-wrapper">
                             <label for="firstName">FIRST NAME</label>
@@ -38,7 +39,7 @@
 
                         <div class="input-wrapper">
                             <label for="lastName">LAST NAME</label>
-                            <input id="lastName"name="lastName" type="text" placeholder="last name" required>
+                            <input id="lastName" name="lastName" type="text" placeholder="last name" required>
                             <p id="lastNameError" class="error hidden"></p>
                         </div>
 
@@ -80,5 +81,6 @@
             <p>Chantal Barrett | 2022</p>
         </footer>
 
+        <script src="script.js"></script>
     </body>
 </html>
