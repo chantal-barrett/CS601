@@ -1,10 +1,10 @@
-# Assignment Two
+# Portfolio
 
 A portfolio website about myself.
 
 ## Description
 
-This assignment uses HTML5, CSS and JavaScript to create a web site that gives an overview of myself. It currently consists of seven pages: a home page, an about page, a contact page, an expertise page, an accolades page, an education page, and an experience page. Each of the pages has a header, nav, footer, and an aside where users can quickly connect with me through LinkedIn, Git, or email. 
+This assignment uses HTML5, CSS and JavaScript to create a web site that gives an overview of myself. It currently consists of eight pages: a home page, an about page, a snowboarding page, a contact page, an expertise page, an accolades page, an education page, and an experience page. Each of the pages has a header, nav, footer, and an aside where users can quickly connect with me through LinkedIn, Git, or email. 
 
 The website uses media queries to provide a different experience to users based on three different screen sizes. These screen size suggestions were taken from https://www.geeksforgeeks.org/how-to-target-desktop-tablet-and-mobile-using-media-query/ where a width of 479.9px and below is used for mobile devices, 480px to 1023.9px is used for tablets, and a width of 1024px and above is used for desktop. I used media queries mainly to adjust content so it shows up in rows on desktop screen sizes and columns on smaller screen sizes. I also used media queries to apply transition effects on hover on desktop screen sizes (because on mobile and tablet devices, there is no hover).
 
