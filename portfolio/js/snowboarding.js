@@ -34,3 +34,10 @@ window.addEventListener('scroll', () => {
     document.body.style.setProperty('--scroll', scrollValue);
     document.body.style.setProperty('--currentPos', "-" + (window.pageYOffset - 100) + "px");
 }, false);
+
+// When the screen is resized, update the properties
+window.addEventListener("resize", () => {
+    document.body.style.setProperty('--bodyHeight', (scrollElement.offsetWidth * 1.17) + "px");
+    document.body.style.setProperty('--descriptionPos', "-" + (scrollElement.offsetWidth) + "px");
+    document.body.style.setProperty('--currentPos', "0px");
+});

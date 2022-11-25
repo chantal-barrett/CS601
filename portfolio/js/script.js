@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < navItems.length; i++) {
         navItems[i].addEventListener("click", function(e) {
             // e.currentTarget.nextElementSibling.style.display = "flex";
-            let navItem = e.currentTarget.parentElement;
+            let navItem = e.currentTarget;
             if (navItem.classList.contains(openClass)) {
                 navItem.classList.remove(openClass);
             }

@@ -143,11 +143,12 @@ nav ul {
 }
 
 nav ul li {
-    padding: 0 15px;
+    padding: 0 5px 15px 15px;
     margin-bottom: 15px;
-    width: 70%;
+    width: 90%;
     text-align: left;
     cursor: pointer;
+    border-bottom: 1px solid white;
 }
 
 nav a {
@@ -158,16 +159,18 @@ nav button {
     background: none;
     border: none;
     padding: 0px;
+    cursor: pointer;
 }
 
 nav a, nav button {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     color: var(--gray);
 }
 
 .dropdown-content {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
     padding: 5px;
     background: var(--white);
     position: relative;
@@ -177,10 +180,34 @@ nav a, nav button {
 
 .dropdown-content a {
     margin: 5px;
+    font-size: 1.4rem;
 }
 
 .dropdown-content a:hover {
     background: var(--light-gray);
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item:after {
+    content: "";
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='%230E0E0E'%3E%3Cpath d='M8.76 0 7.24 1.52 21.72 16 7.24 30.48 8.76 32l16-16z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 22px;
+    height: 22px;
+    background-size: contain;
+    transform: rotate(-270deg);
+    transition: all 1s, opacity 0.5s ease;
+}
+
+.nav-item-expanded::after {
+    transform: rotate(-90deg);
+    transition: all 1s, opacity 0.5s ease;
 }
 
 .nav-item-expanded .dropdown-content {
@@ -193,12 +220,14 @@ nav a, nav button {
     padding: 5px;
     cursor: pointer;
     z-index: 1;
+    top: 22px;
+    left: 5px;
 }
 
 .close-nav {
-    left: 0;
     padding: 5px;
     cursor: pointer;
+    margin-top: 17px;
 }
 
 /* Quick Links */
@@ -271,10 +300,20 @@ nav a, nav button {
         margin-bottom: 0;
         width: 25%;
         text-align: center;
+        border-bottom: none;
     }
 
-    nav li:hover .dropdown-content {
+    .nav-item:hover::after {
+        transform: rotate(-90deg);
+        transition: all 1s, opacity 0.5s ease;
+    }
+
+    .nav-item:hover .dropdown-content {
         display: flex;
+    }
+
+    .dropdown-content {
+        margin-top: 0;
     }
 
     .hamburger, .close-nav {

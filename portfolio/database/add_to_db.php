@@ -7,9 +7,7 @@
     $contactName = $data->name;
     $email = $data->email;
     $comment = $data->message;
-
-    // TO DO: implement subscribe/unsubscribe functionality
-    // $subscribe = $data->subscribe; 
+    $subscribe = $data->subscribe; 
 
     // Add the message to the database only if all fields are provided
     if($contactName && $email && $comment) {
@@ -21,6 +19,21 @@
                 'email' => $email,
                 'comment' => $comment
             ));
+
+            // If the user also wants to subscribe
+            if ($subscribe == "true") {
+                try {
+                    $query = "INSERT INTO subscribers (contactName, email) VALUES (:contactName, :email)";
+                    $conn = $db->prepare($query);
+                    $conn->execute(array(
+                        'contactName' => $contactName,
+                        'email' => $email
+                    ));
+                } catch (Exception $e) {
+                    // If there was an error adding the message
+                    echo("Error: " . $e->getMessage());
+                } 
+            }
         } catch (Exception $e) {
             // If there was an error adding the message
             echo("Error: " . $e->getMessage());
