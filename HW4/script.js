@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("lastNameError").parentElement.classList.add(errorClass);
 
             // If there is still no invalid field, this will be to the first field to focus on
-            firstInvalidField = (firstInvalidField == "") ? lastName : firstInvalidField;
+            firstInvalidField = (firstInvalidField === "") ? lastName : firstInvalidField;
 
             // Set isValid to false, as this is not a valid input
             isValid = false;
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("firstNameError").parentElement.classList.add(errorClass);
 
             // If there is still no invalid field, this will be to the first field to focus on
-            firstInvalidField = (firstInvalidField == "") ? firstName : firstInvalidField;
+            firstInvalidField = (firstInvalidField === "") ? firstName : firstInvalidField;
 
             // Set isValid to false, as this is not a valid input
             isValid = false;
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("lastNameError").parentElement.classList.add(errorClass);
 
             // If there is still no invalid field, this will be to the first field to focus on
-            firstInvalidField = (firstInvalidField == "") ? lastName : firstInvalidField;
+            firstInvalidField = (firstInvalidField === "") ? lastName : firstInvalidField;
 
             // Set isValid to false, as this is not a valid input
             isValid = false;
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("facilitatorError").parentElement.classList.add(errorClass);
 
             // If there is still no invalid field, this will be to the first field to focus on
-            firstInvalidField = (firstInvalidField == "") ? facilitator : firstInvalidField;
+            firstInvalidField = (firstInvalidField === "") ? facilitator : firstInvalidField;
 
             // Set isValid to false, as this is not a valid input
             isValid = false;
@@ -110,5 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Prevent the form from being submitted
             event.preventDefault();
         }
+
+        return isValid;
     }
 });
