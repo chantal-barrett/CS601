@@ -4,7 +4,7 @@ A form that submits user inputs.
 
 ## Description
 
-This assignment uses HTML5, CSS, and JavaScript to create a web site with a form that asks the user to enter their first name, last name, facilitator, and select what they are inquiring about and their preferred method(s) of contact. The program validates that the user entered their name and a valid facilitator before submitting the form. 
+This assignment uses HTML5, CSS, and JavaScript to create a web site with a form that asks the user to enter their first name, last name, facilitator, and select what they are inquiring about and their preferred method(s) of contact. The program validates that the user entered their name, a valid facilitator, selected an inquiry option, and selected at least one contact option before submitting the form. 
 
 
 ### How I Exceeded Requirements

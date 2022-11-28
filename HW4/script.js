@@ -51,8 +51,10 @@ document.addEventListener("DOMContentLoaded", function() {
             errors[i].querySelector(".error").innerText = "";
         }
 
-        // If there is an error, we will use these to focus on the first invalid field
+        // Declare and initialize value to return
         let isValid = true;
+
+        // If there is an error, we will use these to focus on the first invalid field
         let firstInvalidField = "";
 
         // If there is an error with the first name
@@ -68,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // If there is an error with the last name
         if (!isValidName("last name", lastName)) {
 
-            // If there is still no invalid field, this will be to the first field to focus on
+            // If there is still no invalid field, this will be the first field to focus on
             firstInvalidField = (firstInvalidField === "") ? lastName : firstInvalidField;
 
             // Set isValid to false, as this is not a valid input
@@ -78,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // If the facilitator's name is not a valid facilitator
         if (!isValidFacilitator()) {
 
-            // If there is still no invalid field, this will be to the first field to focus on
+            // If there is still no invalid field, this will be the first field to focus on
             firstInvalidField = (firstInvalidField === "") ? facilitator : firstInvalidField;
 
             // Set isValid to false, as this is not a valid input
@@ -91,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
             isValid = false;
         }
 
-        // Check if an contact type is selected
+        // Check if a contact type is selected
         if (!isFieldsetValid(document.querySelectorAll('input[name="contact"]'))) {
             // Set isValid to false
             isValid = false;
@@ -193,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function() {
     * Checks if a fieldset has at least one option selected
     * Returns true if at least one option is selected and false if no options are selected
     * 
-    * param @fieldsetOptions: the input element to validate
+    * param @fieldsetOptions: the group of input elements to validate
     **/
     function isFieldsetValid(fieldsetOptions) {
         let isValid = true;
@@ -201,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Check if a fieldset option is selected
         let inputSelected = false;
         for(let i = 0; i < fieldsetOptions.length; i++) {
-            // If there is one radio button selected
+            // If there is one option selected
             if (fieldsetOptions[i].checked) {
                 // Set inputSelected to true and break out of the loop
                 inputSelected = true;
