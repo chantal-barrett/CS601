@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const firstName = document.getElementById("firstName");
     const lastName = document.getElementById("lastName");
     const facilitator = document.getElementById("facilitator");
+    const inquiryOptions = document.querySelectorAll('input[name="inquiry"]');
+    const contactOptions = document.querySelectorAll('input[name="contact"]');
 
     // Declare needed variable
     const errorClass = "field-error";
@@ -22,14 +24,27 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Add event listener for when the user is typing in a facilitator
-    facilitator.addEventListener("keyup", () => {
-        isValidFacilitator();
-    });
+    facilitator.addEventListener("keyup", isValidFacilitator);
+
+    // Add event listener for when the user clicks on an inquiry
+    for (let i = 0; i < inquiryOptions.length; i++) {
+        inquiryOptions[i].addEventListener("click", () => {
+            isFieldsetValid(inquiryOptions);
+        });  
+    }
+
+    // Add event listener for when the user clicks on a contact type
+    for (let i = 0; i < contactOptions.length; i++) {
+        contactOptions[i].addEventListener("click", () => {
+            isFieldsetValid(contactOptions);
+        });  
+    }
 
     // Validates the content being submitted in the form
     function validateForm(event) {
 
         // Hide all error fields and clear their text
+        document.getElementById("submitError").style.display = "none";
         let errors = document.querySelectorAll(".field-error");
         for (let i = 0; i < errors.length; i++) {
             errors[i].classList.remove(errorClass);
@@ -70,10 +85,25 @@ document.addEventListener("DOMContentLoaded", function() {
             isValid = false;
         }
 
+        // Check if an inquiry type is selected
+        if (!isFieldsetValid(document.querySelectorAll('input[name="inquiry"]'))) {
+            // Set isValid to false
+            isValid = false;
+        }
+
+        // Check if an contact type is selected
+        if (!isFieldsetValid(document.querySelectorAll('input[name="contact"]'))) {
+            // Set isValid to false
+            isValid = false;
+        }
+
         // If there is an invalid field
         if (!isValid) {
             // Focus on the first invalid field
-            firstInvalidField.focus();
+            if (firstInvalidField != "") { firstInvalidField.focus(); }
+
+            // Show the general error message
+            document.getElementById("submitError").style.display = "block";
 
             // Prevent the form from being submitted
             event.preventDefault();
@@ -154,6 +184,41 @@ document.addEventListener("DOMContentLoaded", function() {
             // Remove error message
             document.getElementById("facilitatorError").innerText = "";
             document.getElementById("facilitatorError").parentElement.classList.remove(errorClass);
+        }
+
+        return isValid;
+    }
+
+    /**
+    * Checks if a fieldset has at least one option selected
+    * Returns true if at least one option is selected and false if no options are selected
+    * 
+    * param @fieldsetOptions: the input element to validate
+    **/
+    function isFieldsetValid(fieldsetOptions) {
+        let isValid = true;
+
+        // Check if a fieldset option is selected
+        let inputSelected = false;
+        for(let i = 0; i < fieldsetOptions.length; i++) {
+            // If there is one radio button selected
+            if (fieldsetOptions[i].checked) {
+                // Set inputSelected to true and break out of the loop
+                inputSelected = true;
+                break;
+            }
+        }
+        // If there was no fieldset option selected
+        if (!inputSelected) {
+            // Show the error message
+            fieldsetOptions[0].parentElement.parentElement.classList.add("fieldset-error");
+
+            // Set isValid to false
+            isValid = false;
+        }
+        else {
+            // Clear the error message
+            fieldsetOptions[0].parentElement.parentElement.classList.remove("fieldset-error");
         }
 
         return isValid;

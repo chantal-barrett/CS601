@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="This is a simple form submission">
-        <meta name="keywords" content="Boston Univeristy, CS601, Chantal, calculator">
+        <meta name="keywords" content="Boston Univeristy, CS601, Chantal">
         <title>Chantal Barrett</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,25 +34,26 @@
                         <div class="input-wrapper">
                             <label for="firstName">FIRST NAME</label>
                             <input id="firstName" name="firstName" type="text" placeholder="First name">
-                            <p id="firstNameError" class="error hidden"></p>
+                            <p id="firstNameError" class="error"></p>
                         </div>
 
                         <div class="input-wrapper">
                             <label for="lastName">LAST NAME</label>
                             <input id="lastName" name="lastName" type="text" placeholder="Last name">
-                            <p id="lastNameError" class="error hidden"></p>
+                            <p id="lastNameError" class="error"></p>
                         </div>
 
                         <div class="input-wrapper">
                             <label for="facilitator">FACILITATOR</label>
                             <input id="facilitator" name="facilitator" type="text" placeholder="Facilitator">
-                            <p id="facilitatorError" class="error hidden"></p>
+                            <p id="facilitatorError" class="error"></p>
                         </div>
                     </div>
 
                     <div class="input-wrapper">
                         <fieldset>
                             <legend>Please select what you are inquiring about</legend>
+                            <p id="inquiryError" class="fieldset-error-message">Whoops! Please select what you are inquiring about</p>
                             <div class="input-option"><input type="radio" id="assignment" name="inquiry" value="assignment"><label for="assignment">Assignment Question</label></div>
                             <div class="input-option"><input type="radio" id="quiz" name="inquiry" value="quiz"><label for="quiz">Quiz Question</label></div>
                             <div class="input-option"><input type="radio" id="final-exam" name="inquiry" value="final-exam"><label for="final-exam">Final Exam Question</label></div>
@@ -64,6 +65,7 @@
                     <div class="input-wrapper">
                         <fieldset>
                             <legend>Please select how you would like your facilitator to contact you back</legend>
+                            <p id="contactError" class="fieldset-error-message">Whoops! Please select one or more ways your facilitator can contact you</p>
                             <div class="input-option"><input type="checkbox" id="email" name="contact" value="email"><label for="email">Email</label></div>
                             <div class="input-option"><input type="checkbox" id="blackboard" name="contact" value="blackboard"><label for="blackboard">Blackboard Message</label></div>
                             <div class="input-option"><input type="checkbox" id="call" name="contact" value="call"><label for="call">Phone Call</label></div>
@@ -71,6 +73,7 @@
                         </fieldset>
                     </div>
                     
+                    <p id="submitError" class="error">Whoops! We could not submit the form. Please correct any errors and try again</p>
                     <input type="submit" id="submit" value="submit">
                 </form>
 
