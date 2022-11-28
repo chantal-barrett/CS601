@@ -1,0 +1,97 @@
+/* Mailing list page (mailing_list.html) */
+
+#mailing-list-container {
+    background: var(--light-gray);
+    padding: 15px 30px 40px 30px;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+
+    .tabs {
+        text-align: center;
+    }
+
+    .tab {
+        background: var(--white);
+        border: none;
+        padding: 15px;
+        width: 222px;
+        font-size: 1.2rem;
+    }
+    
+    .tab:hover, .tab-selected {
+        background-color: var(--pink);
+    }
+    
+    .tabcontent {
+        background: var(--white);
+        border: 7px solid var(--pink);
+        max-width: 1000px;
+        margin: auto;
+        padding: 70px 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .form-description {
+        width: 30%;
+    }
+
+    .form-title {
+        font-size: 2rem;
+        margin: 15px 0px;
+    }
+
+    .input-wrapper {
+        margin-bottom: 30px;
+    }
+
+    .input-label {
+        text-transform: uppercase;
+    }
+
+    .form-input {
+        border: none;
+        border-bottom: 1px solid var(--pink);
+        display: block;
+        width: 100%;
+        margin-top: 15px;
+        font-size: 1rem;
+    }
+
+    .submit-button {
+        box-shadow: 0 0px 19px 0 rgb(255 75 90 / 50%);
+        background-color: var(--pink);
+        border: none;
+        border-radius: 25px;
+        line-height: 50px;
+        width: 122px;
+        text-transform: uppercase;
+        margin: 40px auto auto auto;
+    }
+
+    .submit-button:hover {
+        cursor: pointer;
+        box-shadow: 0 10px 30px 0 rgb(51 51 51 / 50%);
+        background-color: var(--gray);
+        color: var(--pink);
+    }
+
+    .tabcontent form {
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: 30px;
+    }
+
+    #update-form p {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+}

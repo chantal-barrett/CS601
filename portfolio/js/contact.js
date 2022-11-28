@@ -10,7 +10,7 @@ function submitContactForm(event) {
         errorMessages[i].classList.add(hiddenClass);
     }
 
-    let url = "./database/add_to_db.php";
+    let url = "./database/add_message.php";
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
