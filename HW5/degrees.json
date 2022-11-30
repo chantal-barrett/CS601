@@ -1,0 +1,20 @@
+{
+    "degrees" : [
+        {
+            "degree" : {
+                "school" : "Boston University",
+                "major" : "Computer Information Systems",
+                "type" : "MS",
+                "year_conferred" : "2023"
+            }
+        },
+        {
+            "degree" : {
+                "school" : "Endicott College",
+                "major" : "Computer Science",
+                "type" : "BS",
+                "year_conferred" : "2017"
+            }
+        }
+    ]
+}

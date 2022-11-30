@@ -1,0 +1,114 @@
+/* Variables */
+:root {
+    --blue: #74EBD5;
+    --purple: #ACB6E5;
+    --red: #FF0000;
+    --pink: #FFC0CB;
+    --white: #FFFFFF;
+    --light-gray: #EEEEEE;
+    --gray: #2A2A2A;
+}
+
+* {
+    font-family: 'Encode Sans', sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+header {
+    display: flex;
+    border-bottom: 1px solid var(--white);
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+}
+
+header svg {
+    width: 70px;
+    height: 70px;
+}
+
+body {
+    max-width: 2000px;
+    margin: auto;
+    padding: 15px 30px;
+}
+
+h1 {
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 34px;
+}
+
+body {
+    max-width: 2000px;
+    margin: auto;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome {
+    font-size: 2.2rem;
+    margin-bottom: 0px;
+}
+
+.welcome-text p {
+    font-size: 1.2rem;
+}
+
+#get-degrees {
+    border: 1px solid var(--pink);
+    padding: 11px 15px;
+    font-size: 1.2rem;
+}
+
+#response-status {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#response-error {
+    color: var(--red);
+    text-align: center;
+}
+
+.degree {
+    background: var(--pink);
+    padding: 5px 15px;
+    margin-bottom: 30px;
+}
+
+.school {
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 15px;
+}
+
+footer {
+    margin-top: 40px;
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    text-align: center;
+}
+
+/* Media Queries */
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+
+    header {
+        flex-direction: row;
+    }
+
+    h1 {
+        margin-left: 15px;
+    }
+
+}
