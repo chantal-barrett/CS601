@@ -99,4 +99,18 @@
         text-align: center;
     }
 
+    .error {
+        display: none;
+        color: var(--red);
+        text-align: left;
+    }
+
+    .field-error .error {
+        display: block;
+    }
+    
+    .field-error input {
+        border-bottom: 2px solid var(--red);
+    }
+
 }

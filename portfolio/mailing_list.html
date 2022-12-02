@@ -95,16 +95,18 @@
                 <form id="join-form">
                     <div class="input-wrapper">
                         <label class="input-label" for="name">Name</label>
-                        <input class="form-input" id="join-name" name="name" type="text" placeholder="Enter your name" required>
+                        <input class="form-input" id="join-name" name="name" type="text" placeholder="Enter your name">
+                        <p id="join-name-error" class="error">Please be sure to enter your name</p>
                     </div>
 
                     <div class="input-wrapper">
                         <label class="input-label" for="email">Email</label>
-                        <input class="form-input" id="join-email" name="email" type="text" placeholder="Enter your email" required>
+                        <input class="form-input" id="join-email" name="email" type="text" placeholder="Enter your email">
+                        <p id="join-email-error" class="error">Please be sure to enter a valid email</p>
                     </div>
 
                     <p id="join-error" class="error-message hidden">Whoops, we could not add you to our mailing list at this moment. Please try again later.</p>
-                    <p id="join-success" class="success-message hidden">Thank you for joining our mailing list! I look forward to keeping you updated, </p>
+                    <p id="join-success" class="success-message hidden">Thank you for joining our mailing list! I look forward to keeping you updated!</p>
                     <input id="join-submit" class="submit-button" type="submit" value="submit">
                 </form>
             </section>
@@ -120,7 +122,8 @@
               <form id="update-form">
                   <div class="input-wrapper">
                     <label class="input-label" for="name">Email</label>
-                    <input class="form-input" id="account-email" name="email" type="text" placeholder="Enter the email you used to join the mailing list" required>
+                    <input class="form-input" id="account-email" name="email" type="text" placeholder="Enter the email you used to join the mailing list">
+                    <p id="update-account-email-error" class="error">Please be sure to enter a valid email</p>
                   </div>
 
                   <p>I'd like to update: </p>
@@ -128,11 +131,13 @@
                   <div class="input-wrapper">
                       <label class="input-label" for="name">My name</label>
                       <input class="form-input" id="update-name" name="name" type="text" placeholder="Enter your name">
+                      <p id="update-name-error" class="error">Please be sure to enter your name</p>
                   </div>
 
                   <div class="input-wrapper">
                       <label class="input-label" for="email">My email</label>
                       <input class="form-input" id="update-email" name="email" type="text" placeholder="Enter your email">
+                      <p id="update-email-error" class="error">Please be sure to enter a valid email</p>
                   </div>
 
                   <p id="update-error" class="error-message hidden">Whoops, we could not update your information at this moment. Please try again later.</p>
@@ -144,7 +149,7 @@
           <!-- Unsubscribe Form -->
           <section id="unsubscribe-container" class="tabcontent hidden">
             <div class="form-description">
-                <img class="form-icon" src="content/unsubscribe.png" alt="Unsubscribe icon" width="100" height="100">
+                <img class="form-icon" src="content/disappointed.png" alt="Unsubscribe icon" width="100" height="100">
                 <h3 class="form-title">We're sad to see you go</h3>
                 <p>We hope you come back! But for now if you wish to unsubscribe please enter your email</p>
             </div>
@@ -152,7 +157,8 @@
             <form id="unsubscribe-form">
                 <div class="input-wrapper">
                     <label class="input-label" for="email">Email</label>
-                    <input class="form-input" id="unsubscribe-email" name="email" type="text" placeholder="Enter your email" required>
+                    <input class="form-input" id="unsubscribe-email" name="email" type="text" placeholder="Enter your email">
+                    <p id="unsubscribe-email-error" class="error">Please be sure to enter a valid email</p>
                 </div>
 
                 <p id="unsubscribe-error" class="error-message hidden">Whoops, we could not unsubscribe at this moment. Please try again later.</p>
