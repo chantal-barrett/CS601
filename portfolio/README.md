@@ -10,23 +10,21 @@ The website uses media queries to provide a different experience to users based 
 
 ### How I Exceeded Requirements
 
-In trying my best to get an A on this assigment, I plan to add many supplemental features to my website including:
+In trying my best to get an A on this assigment, I added many features to my website including:
 - 10 pages
-- Researching CSS and JavaScript features not covered in class (i.e. scrolling behavior - note I still need to work out some issues on this page)
+- Researching CSS and JavaScript features not covered in class (i.e. scrolling behavior, lazy load)
+- Made my website responsive using CSS
+- Utilized ES6 features (let, const, arrow functions, for/of loop)
 - Use different style sheets and JavaScript files to help organization and page performance, as there is no need to load files that aren't going to be used on a page
 - Support for print layouts (removed empty space of heros that have background images, no scroll bar in nav)
-- Create a contact form that adds users to a database along with their message. The plan is to implement a feature where they can subscribe/unsubscribe from emails by deleting their information from the database
-
-### Questions for Facilitator
-- What else can I do to improve this website to best exceed requirements?
-- The nav is still a work in progress but what are your thoughts on an implementation like this?
-- Thank you for taking the time to review this!! 
+- Create a contact form that adds users to a database along with their message. This form also allows users to subscribe to recieving messages. I used PHP to add these users and their messages to a MySQL database.
+- Created a join, update information, and unsubscribe form using PHP to add, update, and removev information from a MySQL database.
 
 ## Getting Started
 
 ### Executing program
 
-* To run this program, simply open the index.html file in a web browser of your choosing. I have also hosted this website here: https://chantalbarrett.netlify.app/portfolio/index.html
+* To run this program, simply navigate to: https://chantalbarrett.com/portfolio/index.html
 
 ## Author
 

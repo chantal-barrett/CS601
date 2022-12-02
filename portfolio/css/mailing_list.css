@@ -38,6 +38,7 @@
 
     .form-description {
         width: 30%;
+        text-align: center;
     }
 
     .form-title {
@@ -92,6 +93,10 @@
     #update-form p {
         text-align: center;
         font-size: 1.2rem;
+    }
+
+    .success-message {
+        text-align: center;
     }
 
 }

@@ -1,0 +1,74 @@
+.projects {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 200px 200px 200px;
+    gap: 10px;
+    background: var(--light-gray);
+}
+
+.project {
+    background-color: var(--pink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-two {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.project-four {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.project-six {
+    grid-column-start: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;  
+}
+
+#database-project {
+    background: url('../content/database.jpeg');
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, .7);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.close-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+}
+
+.close-overlay:hover {
+    cursor: pointer;
+}
+
+.overlay-content {
+    background: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 70%;
+    height: 90%;
+    top: 5%;
+    left: 15%;
+}
+
+.overlay-description {
+    padding: 15px;
+}

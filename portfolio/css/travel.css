@@ -1,0 +1,12 @@
+.location {
+    text-align: center;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+}
+
+.thumbnail-container {
+    padding: 10px;
+}

@@ -38,21 +38,33 @@ function submitJoinForm(event) {
     // Hide error message
     document.getElementById("join-error").classList.add(hiddenClass);
 
+    // Create a fetch request
     let url = "./database/subscribe.php";
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify({
-        // Send the data from the form
-        'name' : document.getElementById("join-name").value,
-        'email' : document.getElementById("join-email").value
-    }));
+    fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type' : 'application/json' },
+        body: JSON.stringify({
+            // Send the data from the form
+            'name' : document.getElementById("join-name").value,
+            'email' : document.getElementById("join-email").value
+        })
+    })
+    .then(response => {
+        if(response.ok) {
+            // Show a success message so the user knows the form submitted okay
+            document.getElementById("join-success").innerText += document.getElementById("join-name").value;
+            document.getElementById("join-success").classList.remove(hiddenClass);
+            document.getElementById("join-error").classList.add(hiddenClass);
 
-    xhr.onerror = function(e) {
-        // Show error message
-        document.getElementById("join-error").classList.remove(hiddenClass);
-    }
-    // stop the form from submitting the normal way and refreshing the page
+            // Clear the input fields
+            clearInputFields(document.getElementById("join-form"));
+        }
+        else {
+            document.getElementById("join-success").classList.add(hiddenClass)
+            document.getElementById("join-error").classList.remove(hiddenClass);
+        }
+    });
+
     event.preventDefault();
 }
 
@@ -60,22 +72,33 @@ function submitUpdateForm(event) {
     // Hide error message
     document.getElementById("update-error").classList.add(hiddenClass);
 
+    // Create a fetch request
     let url = "./database/update.php";
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify({
-        // Send the data from the form
-        'accountEmail' : document.getElementById("account-email").value,
-        'name' : document.getElementById("update-name").value,
-        'email' : document.getElementById("update-email").value
-    }));
+    fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type' : 'application/json' },
+        body: JSON.stringify({
+            // Send the data from the form
+            'accountEmail' : document.getElementById("account-email").value,
+            'name' : document.getElementById("update-name").value,
+            'email' : document.getElementById("update-email").value
+        })
+    })
+    .then(response => {
+        if(response.ok) {
+            // Show a success message so the user knows the form submitted okay
+            document.getElementById("update-success").classList.remove(hiddenClass);
+            document.getElementById("update-error").classList.add(hiddenClass);
 
-    xhr.onerror = function(e) {
-        // Show error message
-        document.getElementById("update-error").classList.remove(hiddenClass);
-    }
-    // stop the form from submitting the normal way and refreshing the page
+            // Clear the input fields
+            clearInputFields(document.getElementById("update-form"));
+        }
+        else {
+            document.getElementById("update-success").classList.add(hiddenClass)
+            document.getElementById("update-error").classList.remove(hiddenClass);
+        }
+    });
+
     event.preventDefault();
 }
 
@@ -83,19 +106,40 @@ function submitUnsubscribeForm(event) {
     // Hide error message
     document.getElementById("unsubscribe-error").classList.add(hiddenClass);
 
+    // Create a fetch request
     let url = "./database/unsubscribe.php";
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify({
-        // Send the data from the form
-        'email' : document.getElementById("unsubscribe-email").value
-    }));
+    let email = document.getElementById("unsubscribe-email").value;
+    fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type' : 'application/json' },
+        body: JSON.stringify({
+            // Send the data from the form
+            'email' : email
+        })
+    })
+    .then(response => {
+        if(response.ok) {
+            // Show a success message so the user knows the form submitted okay
+            document.getElementById("unsubscribe-success").innerText = "We have successfully unsubscribe " + email + " from our mailing list";
+            document.getElementById("unsubscribe-success").classList.remove(hiddenClass);
+            document.getElementById("unsubscribe-error").classList.add(hiddenClass);
 
-    xhr.onerror = function(e) {
-        // Show error message
-        document.getElementById("unsubscribe-error").classList.remove(hiddenClass);
-    }
-    // stop the form from submitting the normal way and refreshing the page
+            // Clear the input fields
+            clearInputFields(document.getElementById("unsubscribe-form"));
+        }
+        else {
+            document.getElementById("unsubscribe-success").classList.add(hiddenClass)
+            document.getElementById("unsubscribe-error").classList.remove(hiddenClass);
+        }
+    });
+
     event.preventDefault();
+}
+
+// Clears all input fields within the given container element
+function clearInputFields(container) {
+    let inputFields = container.querySelectorAll(".form-input");
+    for (input of inputFields) {
+        input.value = "";
+    }
 }
