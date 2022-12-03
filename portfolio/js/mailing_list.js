@@ -17,6 +17,45 @@ document.getElementById("update-form").addEventListener("submit", submitUpdateFo
 // Add event listener for unsubscribe form
 document.getElementById("unsubscribe-form").addEventListener("submit", submitUnsubscribeForm);
 
+// Add event listeners to validate emails
+const joinEmail = document.getElementById("join-email");
+joinEmail.addEventListener("keyup", () => {
+    validEmail(joinEmail);
+});
+
+const accountEmail = document.getElementById("account-email");
+accountEmail.addEventListener("keyup", () => {
+    validEmail(accountEmail);
+});
+
+const updateEmail = document.getElementById("update-email");
+updateEmail.addEventListener("keyup", () => {
+    // The user does not need to provide an email so if it is empty, hide the error message
+    if (updateEmail.value == "") {
+        updateEmail.parentElement.classList.remove(errorClass);
+    }
+    else {
+        validEmail(updateEmail);
+    }
+});
+
+const unsubscribe = document.getElementById("unsubscribe-email");
+unsubscribe.addEventListener("keyup", () => {
+    validEmail(unsubscribe);
+});
+
+// Add event listener to validate name
+const joinName = document.getElementById("join-name");
+joinName.addEventListener("keyup", () => {
+    if (joinName.value === "") {
+        joinName.parentElement.classList.add(errorClass);
+    }
+    else {
+        joinName.parentElement.classList.remove(errorClass);
+    }
+});
+
+
 function showTabContent(event) {
     // Update the selected tab
     if(document.querySelector("." + selectedTabClass)) {
@@ -56,8 +95,7 @@ function submitJoinForm(event) {
     }
 
     // Validate the user's email
-    if (!validEmail(email)) {
-        document.getElementById("join-email-error").parentElement.classList.add(errorClass);
+    if (!validEmail(document.getElementById("join-email"))) {
         isValid = false;
     }
 
@@ -157,8 +195,7 @@ function submitUpdateForm(event) {
     document.getElementById("update-name-error").parentElement.classList.remove(errorClass);
 
     // Validate the user's email
-    if(!validEmail(accountEmail)) {
-        document.getElementById("update-account-email-error").parentElement.classList.add(errorClass);
+    if(!validEmail(document.getElementById("account-email"))) {
         updateError.innerHTML = "Whoops, we could not update your information. Please ensure you are providing a valid account email address";
         isValid = false;
     }
@@ -169,8 +206,7 @@ function submitUpdateForm(event) {
         isValid = false;
     }
     // If the user provided an email, but its not a valid email address format
-    else if (email != "" && !validEmail(email)) {
-        document.getElementById("update-email-error").parentElement.classList.add(errorClass);
+    else if (email != "" && !validEmail(document.getElementById("update-email"))) {
         updateError.innerHTML = "Whoops, we could not update your information. Please ensure you are providing a valid email address";
         isValid = false;
     }
@@ -268,8 +304,7 @@ function submitUnsubscribeForm(event) {
     document.getElementById("unsubscribe-email-error").parentElement.classList.remove(errorClass);
 
     // Validate the user's email
-    if (!validEmail(email)) {
-        document.getElementById("unsubscribe-email-error").parentElement.classList.add(errorClass);
+    if (!validEmail(document.getElementById("unsubscribe-email"))) {
         event.preventDefault();
         return false;
     }
@@ -354,7 +389,18 @@ function clearInputFields(container) {
     }
 }
 
-function validEmail(email) {
+function validEmail(inputField) {
+    const email = inputField.value;
+
     // Regex from: https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript
-    return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    // If the email is not valid format
+    if(!/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
+        inputField.parentElement.classList.add(errorClass);
+        return false;
+    }
+    else {
+        inputField.parentElement.classList.remove(errorClass);
+    }
+
+    return true;
 }

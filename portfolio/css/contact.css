@@ -44,7 +44,7 @@
 
 .form-input {
     border: none;
-    border-bottom: 1px solid var(--pink);
+    border-bottom: 2px solid var(--pink);
     display: block;
     width: 100%;
     margin-top: 15px;
@@ -57,7 +57,7 @@
 
 .input-message-wrapper {
     width: 100%;
-    margin: 30px 0px;
+    margin-bottom: 5px;
 }
 
 #message {
@@ -66,15 +66,42 @@
     min-height: 32px;
 }
 
+.error {
+    visibility: hidden;
+    color: var(--red);
+    margin: 10px 0px;
+    text-align: left !important;
+}
+
+.field-error .error {
+    visibility: visible;
+}
+
+.field-error input,
+.field-error textarea {
+    border-bottom: 2px solid var(--red);
+}
+
 .subscribe-wrapper {
+    text-align: center;
+    margin: 0px;
+}
+
+.status-message {
+    width: 100%;
     text-align: center;
 }
 
 #submit-error {
+    margin: 15px 0px 0px 0px;
+    color: var(--red);
+}
+
+#submit-success {
     width: 100%;
     text-align: center;
-    margin: 0px;
-    color: var(--red);
+    margin-top: 30px;
+    font-size: 1.2rem;
 }
 
 #submit {
@@ -85,7 +112,7 @@
     line-height: 50px;
     width: 100px;
     text-transform: uppercase;
-    margin: 40px auto auto auto;
+    margin: 27px auto auto auto;
 }
 
 #submit:hover {
@@ -118,6 +145,7 @@
     #contact-form {
         padding-left: 30px;
         margin-top: 0;
+        max-width: 70%;
     }
 
 }

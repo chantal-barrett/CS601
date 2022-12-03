@@ -88,17 +88,20 @@
                 <form id="contact-form">
                     <div class="input-wrapper">
                         <label class="input-label" for="name">Name</label>
-                        <input class="form-input" id="name" name="name" type="text" placeholder="Enter you name" required>
+                        <input class="form-input" id="name" name="name" type="text" placeholder="Enter you name">
+                        <p id="name-error" class="error">Please be sure to enter your name</p>
                     </div>
 
                     <div class="input-wrapper">
                         <label class="input-label" for="email">Email</label>
-                        <input class="form-input" id="email" name="email" type="text" placeholder="Enter your email" required>
+                        <input class="form-input" id="email" name="email" type="text" placeholder="Enter your email">
+                        <p id="email-error" class="error">Please be sure to enter a valid email</p>
                     </div>
 
                     <div class="input-message-wrapper">
                         <label class="input-label" for="message">Message</label>
-                        <textarea class="form-input" id="message" name="message" placeholder="Enter your message" required></textarea>
+                        <textarea class="form-input" id="message" name="message" placeholder="Enter your message"></textarea>
+                        <p id="message-error" class="error">Whoops! Don't forget to enter a message</p>
                     </div>
 
                     <div class="input-message-wrapper subscribe-wrapper">
@@ -106,9 +109,12 @@
                       <label for="subscribe">Yes, I'd like to join the email list to get the latest updates on Chantal!</label>
                     </div>
 
-                    <p id="submit-error" class="error-message hidden">Whoops, we could not send your message. Please try again later.</p>
-                    <p id="submit-success" class="hidden">Thank you for your message, </p>
                     <input id="submit" type="submit" value="submit">
+
+                    <div class="status-message">
+                      <p id="submit-error" class="error-message hidden">Whoops, we could not send your message. Please try again later.</p>
+                      <p id="submit-success" class="hidden">Thank you for your message!</p>
+                    </div>
                 </form>
             </section>
         </main>
