@@ -1,20 +1,112 @@
 {
     "degrees" : [
         {
-            "degree" : {
-                "school" : "Boston University",
-                "major" : "Computer Information Systems",
-                "type" : "MS",
-                "year_conferred" : "2023"
-            }
+            "school" : "Boston University",
+            "major" : "Computer Information Systems",
+            "type" : "MS",
+            "year_conferred" : "2023",
+            "courses" : [
+                {
+                    "course_number" : "CS520",
+                    "course": "Information Structures with Java"
+                },
+                {
+                    "course_number" : "CS546",
+                    "course": "Introduction to Probability and Statistics"
+                },
+                {
+                    "course_number" : "CS601",
+                    "course": "Web Application Development"
+                },
+                {
+                    "course_number" : "CS602",
+                    "course": "Server-Side Web Development"
+                },
+                {
+                    "course_number" : "CS625",
+                    "course": "Business Data Communication and Networks"
+                },
+                {
+                    "course_number" : "CS669",
+                    "course": "Database Design and Implementation for Business"
+                },
+                {
+                    "course_number" : "CS682",
+                    "course": "Information Systems Analysis and Design"
+                },
+                {
+                    "course_number" : "CS701",
+                    "course": "Rich Internet Application Development"
+                },
+                {
+                    "course_number" : "CS782",
+                    "course": "IT Strategy and Management"
+                }
+            ]
         },
         {
-            "degree" : {
-                "school" : "Endicott College",
-                "major" : "Computer Science",
-                "type" : "BS",
-                "year_conferred" : "2017"
-            }
+            "school" : "Endicott College",
+            "major" : "Computer Science",
+            "type" : "BS",
+            "year_conferred" : "2017",
+            "courses" : [
+                {
+                    "course_number" : "CS101",
+                    "course" : "Introduction to Computer Science"
+                },
+                {
+                    "course_number" : "CS160",
+                    "course" : "Introduction to Programming"
+                },
+                {
+                    "course_number" : "CS161",
+                    "course" : "Data Structures and Algorithms"
+                },
+                {
+                    "course_number" : "CS170",
+                    "course" : "Computer Architecture"
+                },
+                {
+                    "course_number" : "CS200",
+                    "course" : "Introduction to Web Development and Programming"
+                },
+                {
+                    "course_number" : "CS260",
+                    "course" : "Visual Programming"
+                },
+                {
+                    "course_number" : "CS261",
+                    "course" : "Visual Programming II and Object Oriented Design"
+                },
+                {
+                    "course_number" : "CS270",
+                    "course" : "System/Software Quality Assurance"
+                },
+                {
+                    "course_number" : "CS277",
+                    "course" : "Intro to Applied Robotics"
+                },
+                {
+                    "course_number" : "CS350",
+                    "course" : "Network Operations Management"
+                },
+                {
+                    "course_number" : "CS380",
+                    "course" : "Operating Systems"
+                },
+                {
+                    "course_number" : "CS390",
+                    "course" : "Cyber-Threats and Security"
+                },
+                {
+                    "course_number" : "CS401",
+                    "course" : "Advanced Web Design and Programming"
+                },
+                {
+                    "course_number" : "CS440",
+                    "course" : "Data Mining and Visualization"
+                }
+            ]
         }
     ]
 }
