@@ -5,6 +5,134 @@
     padding: 15px 30px 40px 30px;
 }
 
+.tabs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.tab {
+    background: var(--white);
+    border: none;
+    padding: 15px 5px;
+    width: 33.3%;
+    font-size: 1rem;
+}
+
+.tab:hover, .tab-selected {
+    background-color: var(--pink);
+}
+
+.tab:hover {
+    cursor: pointer;
+}
+
+.tabcontent {
+    background: var(--white);
+    border: 7px solid var(--pink);
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#update {
+    border-right: 1px solid var(--pink);
+    border-left: 1px solid var(--pink);
+}
+
+.form-description {
+    text-align: center;
+}
+
+.form-description p {
+    line-height: 1.4rem;
+}
+
+.form-title {
+    font-size: 2rem;
+    margin: 15px 0px;
+}
+
+form {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.input-wrapper {
+    margin-bottom: 15px;
+}
+
+.input-label {
+    text-transform: uppercase;
+}
+
+.form-input {
+    border: none;
+    border-bottom: 2px solid var(--pink);
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+.submit-button {
+    box-shadow: 0 0px 19px 0 rgb(255 75 90 / 50%);
+    background-color: var(--pink);
+    border: none;
+    border-radius: 25px;
+    line-height: 50px;
+    width: 122px;
+    text-transform: uppercase;
+    margin: 40px auto auto auto;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 30px 0 rgb(51 51 51 / 50%);
+    background-color: var(--gray);
+    color: var(--pink);
+}
+
+.tabcontent form {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 30px;
+}
+
+.update-text {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.success-message {
+    text-align: center;
+}
+
+.error {
+    visibility: hidden;
+    color: var(--red);
+    margin: 10px 0px;
+    text-align: left !important;
+}
+
+.field-error .error {
+    visibility: visible;
+    animation: appear .2s;
+}
+
+.field-error input {
+    border-bottom: 2px solid var(--red);
+}
+
 .status-message {
     text-align: center;
     margin-top: 30px;
@@ -17,120 +145,34 @@
 
 /* Desktop */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
+
+    .tabcontent {
+        padding: 70px 40px;
+        flex-direction: row;
+    }
 
     .tabs {
         text-align: center;
+        display: block;
     }
 
     .tab {
-        background: var(--white);
-        border: none;
-        padding: 15px;
         width: 222px;
         font-size: 1.2rem;
-    }
-    
-    .tab:hover, .tab-selected {
-        background-color: var(--pink);
-    }
-    
-    .tab:hover {
-        cursor: pointer;
-    }
-    
-    .tabcontent {
-        background: var(--white);
-        border: 7px solid var(--pink);
-        max-width: 1000px;
-        margin: auto;
-        padding: 70px 40px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        padding: 15px;
     }
 
-    form {
-        width: 70%;
+    #update {
+        border: none;
     }
 
     .form-description {
         width: 30%;
-        text-align: center;
     }
 
-    .form-title {
-        font-size: 2rem;
-        margin: 15px 0px;
+    form {
+        width: 70%;
+        margin-top: 0px;
     }
-
-    .input-wrapper {
-        margin-bottom: 15px;
-    }
-
-    .input-label {
-        text-transform: uppercase;
-    }
-
-    .form-input {
-        border: none;
-        border-bottom: 2px solid var(--pink);
-        display: block;
-        width: 100%;
-        margin-top: 15px;
-        font-size: 1rem;
-    }
-
-    .submit-button {
-        box-shadow: 0 0px 19px 0 rgb(255 75 90 / 50%);
-        background-color: var(--pink);
-        border: none;
-        border-radius: 25px;
-        line-height: 50px;
-        width: 122px;
-        text-transform: uppercase;
-        margin: 40px auto auto auto;
-    }
-
-    .submit-button:hover {
-        cursor: pointer;
-        box-shadow: 0 10px 30px 0 rgb(51 51 51 / 50%);
-        background-color: var(--gray);
-        color: var(--pink);
-    }
-
-    .tabcontent form {
-        flex-grow: 2;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding-left: 30px;
-    }
-
-    .update-text {
-        text-align: center;
-        font-size: 1.2rem;
-    }
-
-    .success-message {
-        text-align: center;
-    }
-
-    .error {
-        visibility: hidden;
-        color: var(--red);
-        margin: 10px 0px;
-        text-align: left !important;
-    }
-
-    .field-error .error {
-        visibility: visible;
-        animation: appear .2s;
-    }
-    
-    .field-error input {
-        border-bottom: 2px solid var(--red);
-    }
-
 }

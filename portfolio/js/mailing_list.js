@@ -1,7 +1,51 @@
+const tabcontentContainers = document.querySelectorAll(".tabcontent");
 const tabs = document.querySelectorAll(".tab");
 const selectedTabClass = "tab-selected";
 const hiddenClass = "hidden";
 const errorClass = "field-error";
+
+// Add event listener for navigating between tabs with arrows
+tabs.forEach(tab => {
+    tab.addEventListener("keydown", function(event) {
+        let currentIndex = event.target.getAttribute("data-tabindex");
+        let nextTabIndex = 0;
+
+        // If the user presses the right arrow, go to the next tab
+        if (event.key === "ArrowRight") {
+            switch(currentIndex) {
+                case "0":
+                    nextTabIndex = 1;
+                    break;
+                case "1":
+                    nextTabIndex = 2;
+                    break;
+                case "2":
+                    nextTabIndex = 0;
+                    break;
+            }
+
+            // Focus on the correct tab
+            tabs[nextTabIndex].focus();
+        }
+        // If the user presses the left arrow, go to the previous tab
+        else if (event.key === "ArrowLeft") {
+            switch(currentIndex) {
+                case "0":
+                    nextTabIndex = 2;
+                    break;
+                case "1":
+                    nextTabIndex = 0;
+                    break;
+                case "2":
+                    nextTabIndex = 1;
+                    break;
+            }
+
+            // Focus on the correct tab
+            tabs[nextTabIndex].focus();
+        }
+    })
+});
 
 // Add click event listener for each tab
 for (let i = 0; i < tabs.length; i++) {
@@ -57,21 +101,28 @@ joinName.addEventListener("keyup", () => {
 
 
 function showTabContent(event) {
+    let newTab = event.currentTarget;
+    let currentlySelectedTab = document.querySelector("." + selectedTabClass);
+    
     // Update the selected tab
-    if(document.querySelector("." + selectedTabClass)) {
-        document.querySelector("." + selectedTabClass).classList.remove(selectedTabClass);
+    if(currentlySelectedTab) {
+        currentlySelectedTab.classList.remove(selectedTabClass);
+        currentlySelectedTab.setAttribute("aria-selected", "false");
+        currentlySelectedTab.setAttribute("tabindex", "-1");
     }
-    event.currentTarget.classList.add(selectedTabClass);
+
+    // Update the new tab
+    newTab.classList.add(selectedTabClass);
+    newTab.setAttribute("aria-selected", "true");
+    newTab.setAttribute("tabindex", "0");
 
     // Hide all tabcontent containers
-    let tabcontentContainers = document.querySelectorAll(".tabcontent");
     for (let i = 0; i < tabcontentContainers.length; i++) {
         tabcontentContainers[i].classList.add(hiddenClass);
     }
 
     // Show the correct tabcontent
-    let tabcontentToShow = event.currentTarget.getAttribute("data-tabcontent-id");
-    document.getElementById(tabcontentToShow).classList.remove(hiddenClass);
+    document.querySelector('.tabcontent[aria-labelledby="' + newTab.getAttribute("id") + '"]').classList.remove(hiddenClass);
 }
 
 function submitJoinForm(event) {

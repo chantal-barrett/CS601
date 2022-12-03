@@ -78,14 +78,14 @@
         <main id="mailing-list-container" class="main-container">
             <h2 class="page-title">Mailing List</h2>
 
-            <div class="tabs">
-              <button id="join" class="tab tab-selected" data-tabcontent-id="join-container">Join</button>
-              <button id="update" class="tab" data-tabcontent-id="update-container">Update Information</button>
-              <button id="unsubscribe" class="tab" data-tabcontent-id="unsubscribe-container">Unsubscribe</button>
+            <div class="tabs" role="tablist">
+              <button id="join" class="tab tab-selected" role="tab" aria-selected="true" tabindex="0" data-tabcontent-id="join-container" data-tabindex="0">Join</button>
+              <button id="update" class="tab" role="tab" aria-selected="false" tabindex="-1" data-tabcontent-id="update-container" data-tabindex="1">Update Information</button>
+              <button id="unsubscribe" class="tab" role="tab" aria-selected="false" tabindex="-1" data-tabcontent-id="unsubscribe-container" data-tabindex="2">Unsubscribe</button>
             </div>
             
             <!-- Join Form -->
-            <section id="join-container" class="tabcontent">
+            <section id="join-container" class="tabcontent" role="tabpanel" aria-labelledby="join" tabindex="0">
                 <div class="form-description">
                     <img class="form-icon" src="content/hi.png" alt="Person waving hi" width="100" height="100">
                     <h3 class="form-title">Follow Me</h3>
@@ -105,14 +105,17 @@
                         <p id="join-email-error" class="error">Please be sure to enter a valid email</p>
                     </div>
 
-                    <p id="join-error" class="error-message hidden">Whoops, we could not add you to our mailing list at this moment. Please try again later.</p>
-                    <p id="join-success" class="success-message hidden">Thank you for joining our mailing list! I look forward to keeping you updated!</p>
                     <input id="join-submit" class="submit-button" type="submit" value="submit">
+
+                    <div class="status-message">
+                      <p id="join-error" class="error-message hidden">Whoops, we could not add you to our mailing list at this moment. Please try again later.</p>
+                      <p id="join-success" class="success-message hidden">Thank you for joining our mailing list! I look forward to keeping you updated!</p>
+                    </div>
                 </form>
             </section>
 
             <!-- Update Form -->
-            <section id="update-container" class="tabcontent hidden">
+            <section id="update-container" class="tabcontent hidden" role="tabpanel" aria-labelledby="update" tabindex="0">
               <div class="form-description">
                   <img class="form-icon" src="content/change.png" alt="Update icon" width="100" height="100">
                   <h3 class="form-title">Update</h3>
@@ -126,7 +129,7 @@
                     <p id="update-account-email-error" class="error">Please be sure to enter a valid email</p>
                   </div>
 
-                  <p>I'd like to update: </p>
+                  <p class="update-text">I'd like to update: </p>
 
                   <div class="input-wrapper">
                       <label class="input-label" for="name">My name</label>
@@ -140,14 +143,17 @@
                       <p id="update-email-error" class="error">Please be sure to enter a valid email</p>
                   </div>
 
-                  <p id="update-error" class="error-message hidden">Whoops, we could not update your information at this moment. Please try again later.</p>
-                  <p id="update-success" class="success-message hidden">We have successfully updated your information!</p>
                   <input id="update-submit" class="submit-button" type="submit" value="Update">
+
+                  <div class="status-message">
+                    <p id="update-error" class="error-message hidden">Whoops, we could not update your information at this moment. Please try again later.</p>
+                    <p id="update-success" class="success-message hidden">We have successfully updated your information!</p>
+                  </div>
               </form>
           </section>
 
           <!-- Unsubscribe Form -->
-          <section id="unsubscribe-container" class="tabcontent hidden">
+          <section id="unsubscribe-container" class="tabcontent hidden" role="tabpanel" aria-labelledby="unsubscribe" tabindex="0">
             <div class="form-description">
                 <img class="form-icon" src="content/disappointed.png" alt="Unsubscribe icon" width="100" height="100">
                 <h3 class="form-title">We're sad to see you go</h3>
@@ -161,9 +167,12 @@
                     <p id="unsubscribe-email-error" class="error">Please be sure to enter a valid email</p>
                 </div>
 
-                <p id="unsubscribe-error" class="error-message hidden">Whoops, we could not unsubscribe at this moment. Please try again later.</p>
-                <p id="unsubscribe-success" class="success-message hidden"></p>
                 <input id="unsubscribe-submit" class="submit-button" type="submit" value="Unsubscribe">
+
+                <div class="status-message">
+                  <p id="unsubscribe-error" class="error-message hidden">Whoops, we could not unsubscribe at this moment. Please try again later.</p>
+                  <p id="unsubscribe-success" class="success-message hidden"></p>
+                </div>
             </form>
           </section>
           
