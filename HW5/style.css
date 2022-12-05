@@ -1,7 +1,5 @@
 /* Variables */
 :root {
-    --blue: #74EBD5;
-    --purple: #ACB6E5;
     --red: #FF0000;
     --pink: #FFC0CB;
     --white: #FFFFFF;
@@ -175,8 +173,6 @@ footer {
 footer p {
     margin: 7px;
 }
-
-/* Media Queries */
 
 /* Desktop */
 
