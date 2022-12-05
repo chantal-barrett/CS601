@@ -82,6 +82,7 @@ body {
 #get-degrees {
     border: none;
     background: var(--pink);
+    color: var(--gray);
     padding: 11px 15px;
     font-size: 1.2rem;
 }
