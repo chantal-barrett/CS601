@@ -1,7 +1,7 @@
 // Declare and initalize needed variable
 const hiddenClass = "hidden";
 
-// Add event listener for fetching response
+// Add event listener for fetching degrees
 document.getElementById("get-degrees").addEventListener("click", fetchDegrees);
 
 // Makes a request to degrees.json to get the degrees I have recieved
@@ -65,17 +65,15 @@ function fetchDegrees() {
                 const courseTable = document.createElement("table");
 
                 // Add a caption to the table
-                const tableCaption = `<caption class="courses-header">Courses Taken</caption>`;
-                courseTable.innerHTML = tableCaption;
+                courseTable.innerHTML = `<caption class="courses-header">Courses Taken</caption>`;
 
                 // Add a header to the table
-                const tableHeader = `<thead>
+                courseTable.innerHTML += `<thead>
                                         <tr>
                                             <th>Course Number</th>
                                             <th>Course Name</th>
                                         </tr>
                                     </thead>`;
-                courseTable.innerHTML += tableHeader;
 
                 // Loop through the courses and add each course to the table
                 for (let j = 0;  j < courses.length; j++) {
@@ -95,7 +93,7 @@ function fetchDegrees() {
 
             // Show the degrees container
             degreesContainer.classList.remove(hiddenClass);
-        })
+        });
     })
     .catch((error) => {
         // Show the error message
