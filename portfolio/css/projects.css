@@ -1,16 +1,28 @@
 .projects {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: 200px 200px 200px;
-    gap: 10px;
+    display: block;
+    margin: 15px;
     background: var(--light-gray);
 }
 
 .project {
     background-color: var(--pink);
+    background-size: cover;
+    filter: grayscale(100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
+}
+
+.project:hover {
+    cursor: pointer;
+    filter: grayscale(0%);
+}
+
+.project p {
+    background: var(--white);
+    font-size: 2rem;
+    padding: 5px;
 }
 
 .project-two {
@@ -32,8 +44,28 @@
 }
 
 #database-project {
-    background: url('../content/database.jpeg');
-    background-repeat: no-repeat;
+    background-image: url('../content/database.jpeg');
+}
+
+#macros-project {
+    background-image: url('../content/macros.jpeg');
+}
+
+#spotify-project {
+    background-image: url('../content/spotify.webp');
+}
+
+#calculator-project {
+    background-image: url('../content/calculator_project.jpeg');
+    background-position-x: -250px;
+}
+
+#website-project {
+    background-image: url('../content/website.jpeg');
+}
+
+#form-project {
+    background-image: url('../content/form.jpeg');
 }
 
 .overlay {
@@ -48,7 +80,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 5px;
+    padding: 10px;
 }
 
 .close-overlay:hover {
@@ -56,7 +88,7 @@
 }
 
 .overlay-content {
-    background: var(--light-gray);
+    background: var(--white);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -67,8 +99,51 @@
     height: 90%;
     top: 5%;
     left: 15%;
+    display: none;
+}
+
+.overlay-active {
+    display: flex;
+}
+
+.overlay-title {
+    font-size: 2.2rem;
+    margin-bottom: 0px;
+    border-bottom: 2px solid var(--pink);
+    padding-bottom: 15px;
 }
 
 .overlay-description {
+    padding: 15px 30px;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.overlay-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    background: var(--pink);
     padding: 15px;
+    color: var(--gray);
+    border-radius: 25px;
+}
+
+.overlay-link:hover {
+    background: var(--gray);
+    color: var(--pink);
+}
+
+/* Tablet */
+
+@media screen and (min-width: 768px) {
+    .projects {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 200px 200px 200px;
+        gap: 10px;
+    }
+
+    .project {
+        margin: 0;
+    }
 }

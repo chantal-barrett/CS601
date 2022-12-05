@@ -7,7 +7,7 @@
     --red: #FF0000;
 }
 
-/* Keyframes */
+/* Keyframe */
 @keyframes appear {
     0% {
         opacity: 0;

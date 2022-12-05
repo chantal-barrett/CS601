@@ -1,26 +1,45 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const hiddenClass = "hidden";
+    const activeClass = "overlay-active";
 
     // Add event listeners for projects
     const projects = document.querySelectorAll(".project");
     for (let project of projects) {
-        project.addEventListener("click", function(event) {
-            let overlayID = event.currentTarget.getAttribute("data-overlay-id");
-            let overlay = document.getElementById(overlayID);
+        project.addEventListener("click", openOverlay);
 
-            // Add an event listener for when the user wants to close the overlay
-            overlay.querySelector(".close-overlay").addEventListener("click", closeOverlay);
+        // If a user is navigating through the page with their keyboard
+        project.addEventListener("keyup", function(event) {
+            // Open the overlay if they click enter
+            if (event.key === "Enter") {
+                openOverlay(event);
 
-            // Show the overlay
-            overlay.classList.remove(hiddenClass);
-            document.querySelector(".overlay").classList.remove(hiddenClass);
+                // The tab focus should now be on the overlay
+                document.querySelector("." + activeClass + " .close-overlay").focus();
+            }
         });
     }
 
-    function closeOverlay(event) {
-        event.currentTarget.parentElement.classList.add(hiddenClass);
-        event.currentTarget.parentElement.parentElement.classList.add(hiddenClass);
+    // Opens the overlay
+    function openOverlay(event) {
+        let overlayID = event.currentTarget.getAttribute("data-overlay-id");
+        let overlay = document.getElementById(overlayID);
+
+        // Add an event listener for when the user wants to close the overlay
+        overlay.querySelector(".close-overlay").addEventListener("click", closeOverlay);
+
+        // Show the overlay
+        overlay.classList.add(activeClass);
+        document.querySelector(".overlay").classList.remove(hiddenClass);
+    }
+
+    // Closes the overlay
+    function closeOverlay() {
+        // Remove active class from overlay
+        document.querySelector("." + activeClass).classList.remove(activeClass);
+
+        // Hide the overlay
+        document.querySelector(".overlay").classList.add(hiddenClass);
     }
 
     // Use Vue.js to create overlays
@@ -30,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
             projects: [
                 {
                     id: "database-overlay",
-                    title: "Database Project",
-                    description: "description",
+                    title: "Database Design",
+                    description: "For my Database course at Boston University, I designed a database for a mobile application that lets a user keep track of their physical activity.",
                     linkTitle: "Download Database Design",
                     href: "content/projects/database_design.docx"
                 },
@@ -45,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 {
                     id: "spotify-overlay",
                     title: "Spotify",
-                    description: "Spotify proposal",
-                    linkTitle: "Download proposal",
+                    description: "Spotify is the global leader in the audio streaming industry due to its unique freemium business model, its omnipresence, as well as its proprietary technology used to provide users with the best possible audio streaming experience. However, Spotify struggles to sustain a profit in an increasingly competitive market. For my IT Strategy and Management course at Boston University, I created a business proposal to help with this.",
+                    linkTitle: "View proposal",
                     href: "content/projects/spotify_business_model.docx"
                 },
                 {
@@ -71,6 +90,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     href: "../HW4/index.html"
                 }
             ]
+        }
+    });
+
+    // Add event listener for clicking out of overlay
+    document.getElementById("overlay").addEventListener("click", function(event) {
+        if (event.target.getAttribute("id") === "overlay") {
+            closeOverlay();
         }
     });
         
