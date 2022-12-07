@@ -1,12 +1,33 @@
-.location {
+.location-header {
     text-align: center;
 }
 
-.thumbnails {
+.next {
+    transform: rotate(180deg);
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.dots {
     display: flex;
     justify-content: center;
 }
 
-.thumbnail-container {
-    padding: 10px;
+.dot {
+    height: 30px;
+    width: 30px;
+    background: var(--pink);
+    border-radius: 50%;
+    margin: 15px 5px;
+}
+
+.dot:hover {
+    cursor: pointer;
+    background: var(--gray);
+}
+
+.selected {
+    background: var(--gray);
 }

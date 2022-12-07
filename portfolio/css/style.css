@@ -294,6 +294,8 @@ nav a, nav button {
 
     nav ul {
         flex-direction: row;
+        max-width: 1000px;
+        margin: 5px auto;
     }
     
     nav ul li {
@@ -356,7 +358,7 @@ nav a, nav button {
 
 /* Tablet */
 
-@media screen and (min-width: 480px) and (max-width: 1023.9px) {
+/* @media screen and (min-width: 480px) and (max-width: 1023.9px) {
     .logo-container {
         background: var(--gray);
     }
@@ -364,7 +366,7 @@ nav a, nav button {
     .logo-header {
         color: var(--white);
     }
-}
+} */
 
 /* Mobile */
 

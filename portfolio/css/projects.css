@@ -1,7 +1,19 @@
+#projects-hero {
+    background: url('../content/projects.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -117px;
+}
+
+.hero-title {
+    mix-blend-mode: multiply;
+}
+
 .projects {
     display: block;
     margin: 15px;
-    background: var(--light-gray);
+    background: var(--pink);
+    padding: 10px;
 }
 
 .project {
@@ -17,6 +29,10 @@
 .project:hover {
     cursor: pointer;
     filter: grayscale(0%);
+}
+
+.project:hover p {
+    background: var(--pink);
 }
 
 .project p {
