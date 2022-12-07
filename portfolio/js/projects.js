@@ -56,14 +56,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
                 {
                     id: "macros-overlay",
-                    title: "Macros project",
-                    description: "description",
-                    linkTitle: "link title",
-                    href: "macros.html"
+                    title: "Macros Tracker",
+                    description: "For my Rich Internet Application Development course at Boston University, I developed a macronutrients tracker using Angular. This macronutrients tracker is a responsive web application that lets a user set their macro goals and track their food intake so the user can see how well they are performing against their goals.",
+                    linkTitle: "Download the Project Overview",
+                    href: "content/projects/macros.docx"
                 },
                 {
                     id: "spotify-overlay",
-                    title: "Spotify",
+                    title: "Spotify Proposal",
                     description: "Spotify is the global leader in the audio streaming industry due to its unique freemium business model, its omnipresence, as well as its proprietary technology used to provide users with the best possible audio streaming experience. However, Spotify struggles to sustain a profit in an increasingly competitive market. For my IT Strategy and Management course at Boston University, I created a business proposal to help with this.",
                     linkTitle: "View proposal",
                     href: "content/projects/spotify_business_model.docx"

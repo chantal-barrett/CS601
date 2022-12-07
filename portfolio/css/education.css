@@ -40,6 +40,12 @@
 
 .courses-table {
     margin: 15px auto;
+    text-align: center;
+}
+
+td {
+    border-bottom: 1px solid var(--white);
+    line-height: 2rem;
 }
 
 .courses-header {

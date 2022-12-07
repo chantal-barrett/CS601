@@ -181,6 +181,7 @@ nav a, nav button {
 .dropdown-content a {
     margin: 5px;
     font-size: 1.4rem;
+    text-transform: capitalize;
 }
 
 .dropdown-content a:hover {

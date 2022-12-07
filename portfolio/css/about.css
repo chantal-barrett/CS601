@@ -25,6 +25,7 @@
 .activity-details p {
     padding: 15px 0px;
     margin-top: 0px;
+    line-height: 1.4rem;
 }
 
 .activity-right .activity-details-title {
@@ -48,6 +49,22 @@
 .activity-content {
     text-align: center;
     margin: 0;
+}
+
+.others {
+    text-align: center;
+    margin: 15px 0px;
+    padding: 15px;
+    background: var(--gray);
+}
+
+.others p {
+    color: var(--white);
+}
+
+.others a {
+    color: var(--pink);
+    font-size: 1.4rem;
 }
 
 /* Desktop */
