@@ -109,9 +109,10 @@ var travelContainer = new Vue({
         <section id="travelContainer">
             <div class="image-container">
                 <button class="previous arrow" data-direction="previous" v-on:click="nextPicture">
-                    <span class="prev-arrow" aria-hidden="true"></span>
+                    <!-- For accessibility -->
                     <span class="screen-reader-only">Previous location</span>
                 </button>
+                
                 <div v-for="(image, index) in images" :class="{'active': index === 0}" class="location-container" :data-index="index">
                     <div class="location-header">
                         <h2 class="location">{{ image.location }}</h2>
@@ -121,7 +122,7 @@ var travelContainer = new Vue({
                 </div>
                 
                 <button class="next arrow" data-direction="next" v-on:click="nextPicture">
-                    <span class="next-arrow" aria-hidden="true"></span>
+                    <!-- For accessibility -->
                     <span class="screen-reader-only">Next location</span>
                 </button>
             </div>

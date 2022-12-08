@@ -1,13 +1,76 @@
+#travel-hero {
+    background: url('../content/travel.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -117px;
+}
+
+#travelContainer {
+    background: var(--light-gray);
+    margin: 30px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+}
+
 .location-header {
     text-align: center;
+    padding-bottom: 15px;
+}
+
+.location-container {
+    display: none;
+}
+
+.location-container.active {
+    animation: appear .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.location {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.location-description {
+    border-bottom: 2px solid var(--pink);
+    padding-bottom: 15px;
+    margin: 0px 30px;
+    line-height: 1.4rem;
+}
+
+.previous {
+    left: 57px;
+    background: url("../content/arrow.png");
 }
 
 .next {
     transform: rotate(180deg);
+    background: url("../content/arrow.png");
+    right: 57px;
+}
+
+.arrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    background-size: contain;
 }
 
 .arrow:hover {
     cursor: pointer;
+    background-color: var(--pink);
 }
 
 .dots {
@@ -16,16 +79,27 @@
 }
 
 .dot {
-    height: 30px;
-    width: 30px;
-    background: var(--pink);
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     margin: 15px 5px;
+    border: 2px solid var(--gray);
 }
 
 .dot:hover {
     cursor: pointer;
     background: var(--gray);
+}
+
+.screen-reader-only {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 .selected {

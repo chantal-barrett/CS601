@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     // Because JavaScript is enabled, we want to show the content that requires JavaScript
+    // (noscript class has a display of none)
     let noscriptElements = document.querySelectorAll(".noscript");
     for (let i = 0; i < noscriptElements.length; i++) {
         noscriptElements[i].classList.remove("noscript");

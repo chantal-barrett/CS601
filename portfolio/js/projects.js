@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    // Declare and initalize needed variables
     const hiddenClass = "hidden";
     const activeClass = "overlay-active";
 
