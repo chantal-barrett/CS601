@@ -48,5 +48,18 @@ var expertiseApp = new Vue({
                 ]
             }
         ]
-    }
+    },
+    template: `
+        <div id="expertiseApp" class="expertise-container">
+        <section v-for="section in sections" class="expertise-section">
+            <img class="expertise-icon" :src="section.imageSource" :alt="section.imageAlt" width="70" height="70">
+            <h3>{{ section.title }}</h3>
+            <div class="expertise-content fadein">
+                <ul>
+                    <li v-for="skill in section.skills">{{ skill }} </li>
+                </ul>
+            </div>
+        </section>
+        </div>
+    `,
 });

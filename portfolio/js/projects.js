@@ -90,7 +90,17 @@ document.addEventListener("DOMContentLoaded", function() {
                     href: "../HW4/index.html"
                 }
             ]
-        }
+        },
+        template: `
+            <div id="overlay" class="overlay hidden">
+                <div v-for="project in projects" :id="project.id" class="overlay-content">
+                    <img class="close-overlay" src="content/close.png" width="30" height="30" alt="Close overlay" tabindex="0">
+                    <h2 class="overlay-title">{{ project.title }}</h2>
+                    <p class="overlay-description">{{ project.description }}</p>
+                    <a :href="project.href" class="overlay-link" target="_blank">{{ project.linkTitle }} &rarr;</a>
+                </div>
+            </div>
+        `,
     });
 
     // Add event listener for clicking out of overlay
