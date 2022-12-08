@@ -19,6 +19,17 @@ main {
 .snowboarding-title {
     display: none;
 }
+.snowboarding-title.noscript {
+    display: none;
+}
+
+.description.noscript {
+    display: block;
+    position: absolute;
+    height: auto;
+    z-index: 0;
+    background: var(--light-gray);
+}
 
 .description p {
     margin: 50px;
@@ -43,6 +54,8 @@ main {
         width: 100%;
         height: 85px;
         top: 0;
+        z-index: 2;
+        background: var(--white);
     }
 
     .snowboarding-title {
@@ -87,7 +100,7 @@ main {
     
     .snowboarding-hero-media {
         margin: 30px;
-        height: 400px;
+        height: 500px;
         overflow: hidden;
         filter: grayscale(1);
     }
@@ -99,6 +112,7 @@ main {
     
     .snowboarding-hero-title {
         background: var(--white);
+        top: 225px;
     }
     
     .logo-container {

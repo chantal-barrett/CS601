@@ -84,23 +84,15 @@
             <section class="hero">
                 <div id="travel-hero" class="hero-media"></div>
                 <h2 class="hero-title fadein">Travel</h2>
-                <p class="hero-description"> I love to travel. Here are some places I have been</p>
+                <p class="hero-description"> I love to travel. Here are some places I have been:</p>
             </section>
 
-            <section id="travelContainer">
-              <div class="location-header">
-                <h2 id="location">{{ images[0].location }}</h2>
-                <p id="location-description">{{ images[0].description }}</p>
-              </div>
-              <div class="image-container">
-                <img class="previous arrow" src="./content/arrow.png" width="30" height="30" alt="previous image" data-direction="previous" v-on:click="nextPicture">
-                <img id="location-image" :src="images[0].source" :alt="images[0].alt" width="500" height="500" data-index="0">
-                <img class="next arrow" src="./content/arrow.png" width="30" height="30" alt="next image" data-direction="next" v-on:click="nextPicture">
-              </div>
+            <noscript>
+              <p>Whoops! This page requires JavaScript to be enabled. Please turn on JavaScript to get the full experience!</p>
+            </noscript>
 
-              <div class="dots">
-                <div v-for="(image, index) in images" :class="{'selected': index === 0}" class="dot" :data-location="image.location" :data-description="image.description" :data-src="image.source" :data-alt="image.alt" :data-index="index" v-on:click="showPicture"></div>
-              </div>
+            <section id="travelContainer" class="noscript">
+                <!-- Content to be rendered using Vue.js -->
             </section>
         </main>
 

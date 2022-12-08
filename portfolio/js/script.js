@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    // Because JavaScript is enabled, we want to show the content that requires JavaScript
+    let noscriptElements = document.querySelectorAll(".noscript");
+    for (let i = 0; i < noscriptElements.length; i++) {
+        noscriptElements[i].classList.remove("noscript");
+    }
+
     // Event listeners for nav items on mobile
     const navItems = document.querySelectorAll(".nav-item");
     const openClass = "nav-item-expanded";

@@ -3,8 +3,11 @@ const scrollElement = document.querySelector(".snowboarding-title");
 const description = document.querySelector(".description");
 const footer = document.querySelector("footer");
 
-// Because JavaScript is enabled, we want to show the content
-document.body.querySelector("main").classList.remove("noscript");
+// Because JavaScript is enabled, we want to show the content that requires JavaScript
+let noscriptElements = document.querySelectorAll(".noscript");
+for (let i = 0; i < noscriptElements.length; i++) {
+    noscriptElements[i].classList.remove("noscript");
+}
 
 // Set the intial properties
 document.body.style.setProperty('--bodyHeight', (scrollElement.offsetWidth * 1.17) + "px");

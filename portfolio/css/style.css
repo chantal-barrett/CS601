@@ -35,7 +35,11 @@ body {
 }
 
 .noscript {
-    display: none;
+    display: none !important;
+}
+
+noscript p {
+    text-align: center;
 }
 
 .fadein {
