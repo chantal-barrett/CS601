@@ -60,7 +60,18 @@ noscript p {
     display: none !important;
 }
 
-.logo-container {
+.screen-reader-only {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.header-container {
     text-align: center;
     padding: 5px;
     position: relative;
@@ -137,14 +148,23 @@ noscript p {
 /* Nav */
 
 nav {
+    /* display: none; */
     padding: 5px;
     background: linear-gradient(45deg, var(--white) 1%, var(--pink));
+    box-shadow: 0 0px 19px 0 rgb(255 75 90 / 50%);
     position: fixed;
     height: 100vh;
-    z-index: 100001;
+    z-index: 100000001;
     top: 0;
     width: 75%;
-    display: none;
+    transform: translateX(-110%);
+    will-change: transform;
+}
+
+nav.nav-expanded {
+    transform: translateX(0%);
+    transition: transform .3s ease-out;
+    will-change: transform;
 }
 
 nav ul {
@@ -182,18 +202,19 @@ nav a, nav button {
 }
 
 .dropdown-content {
-    display: flex;
     flex-direction: column;
     margin-top: 10px;
-    padding: 5px;
+    padding: 10px;
     background: var(--white);
     position: relative;
     z-index: 1;
     display: none;
+    animation: appear .5s;
 }
 
 .dropdown-content a {
     margin: 5px;
+    padding: 5px;
     font-size: 1.4rem;
     text-transform: capitalize;
 }
@@ -217,12 +238,12 @@ nav a, nav button {
     height: 22px;
     background-size: contain;
     transform: rotate(-270deg);
-    transition: all 1s, opacity 0.5s ease;
+    transition: all 1s, opacity 0.2s ease;
 }
 
 .nav-item-expanded::after {
     transform: rotate(-90deg);
-    transition: all 1s, opacity 0.5s ease;
+    transition: all 1s, opacity 0.2s ease;
 }
 
 .nav-item-expanded .dropdown-content {
@@ -230,20 +251,69 @@ nav a, nav button {
 }
 
 .hamburger {
+    background: url("../content/menu.png");
     position: absolute;
-    left: 0;
     padding: 5px;
     cursor: pointer;
     z-index: 1;
     top: 22px;
-    left: 5px;
+    left: 15px;
+    border: none;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
 }
 
 .close-nav {
+    background: url("../content/close.png");
     padding: 5px;
     cursor: pointer;
-    margin-top: 17px;
+    margin: 17px 10px;
+    border: none;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
 }
+
+/* If JavaScript is disabled, still need to show the nav */
+
+nav.noscript {
+    transform: translateX(0%);
+    display: block !important;
+    position: unset;
+    width: 100%;
+}
+
+nav.noscript .dropdown-content {
+    display: flex;
+}
+
+nav.noscript ul {
+    flex-direction: row;
+    max-width: 1000px;
+    margin: 5px auto;
+}
+
+nav.noscript ul li {
+    margin-bottom: 0;
+    width: 25%;
+    text-align: center;
+    border-bottom: none;
+}
+
+nav.noscript .nav-item:hover::after {
+    transform: rotate(-90deg);
+    transition: all 1s, opacity 0.5s ease;
+}
+
+nav.noscript .nav-item:hover .dropdown-content {
+    display: flex;
+}
+
+nav.noscript .close-nav {
+    display: none;
+}
+
 
 /* Quick Links */
 
@@ -296,45 +366,12 @@ nav a, nav button {
 
 @media screen and (min-width: 1024px) {
 
-    .logo-container {
+    .header-container {
         background: none;
     }
 
     nav {
-        position: unset;
-        height: unset;
-        width: 100%;
-        display: block !important;
-    }
-
-    nav ul {
-        flex-direction: row;
-        max-width: 1000px;
-        margin: 5px auto;
-    }
-    
-    nav ul li {
-        margin-bottom: 0;
-        width: 25%;
-        text-align: center;
-        border-bottom: none;
-    }
-
-    .nav-item:hover::after {
-        transform: rotate(-90deg);
-        transition: all 1s, opacity 0.5s ease;
-    }
-
-    .nav-item:hover .dropdown-content {
-        display: flex;
-    }
-
-    .dropdown-content {
-        margin-top: 0;
-    }
-
-    .hamburger, .close-nav {
-        display: none;
+        width: 40%;
     }
     
     .hero-media {
@@ -374,7 +411,7 @@ nav a, nav button {
 /* Tablet */
 
 /* @media screen and (min-width: 480px) and (max-width: 1023.9px) {
-    .logo-container {
+    .header-container {
         background: var(--gray);
     }
 

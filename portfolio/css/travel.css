@@ -15,7 +15,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 650px;
 }
 
 .location-header {
@@ -91,17 +90,13 @@
     background: var(--gray);
 }
 
-.screen-reader-only {
-    border: 0;
-    clip: rect(0,0,0,0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
 .selected {
     background: var(--gray);
+}
+
+@media screen and (max-width: 786px) {
+    .location-image {
+        height: auto;
+        width: calc(100% - 150px);
+    }
 }

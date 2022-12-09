@@ -17,9 +17,9 @@
 .tab {
     background: var(--white);
     border: none;
-    padding: 15px 5px;
+    padding: 15px 2px;
     width: 33.3%;
-    font-size: 1rem;
+    font-size: .9rem;
 }
 
 .tab:hover, .tab-selected {
@@ -35,10 +35,9 @@
     border: 7px solid var(--pink);
     max-width: 1000px;
     margin: auto;
-    padding: 40px;
+    padding: 22px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 #update {
@@ -76,7 +75,7 @@ form {
     border: none;
     border-bottom: 2px solid var(--pink);
     display: block;
-    width: 100%;
+    width: calc(100% - 22px);
     margin-top: 15px;
     font-size: 1rem;
 }
@@ -89,7 +88,7 @@ form {
     line-height: 50px;
     width: 122px;
     text-transform: uppercase;
-    margin: 40px auto auto auto;
+    margin: 0px auto;
 }
 
 .submit-button:hover {
@@ -105,7 +104,6 @@ form {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-left: 30px;
 }
 
 .update-text {
@@ -135,7 +133,7 @@ form {
 
 .status-message {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 15px;
     font-size: 1.2rem;
 }
 
@@ -148,7 +146,7 @@ form {
 @media screen and (min-width: 768px) {
 
     .tabcontent {
-        padding: 70px 40px;
+        padding: 70px 40px 30px 40px;
         flex-direction: row;
     }
 
@@ -174,5 +172,10 @@ form {
     form {
         width: 70%;
         margin-top: 0px;
+        padding-left: 30px;
+    }
+
+    .submit-button {
+        margin: 15px auto auto auto;
     }
 }

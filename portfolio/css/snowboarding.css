@@ -7,11 +7,6 @@
     }
 }
 
-nav {
-    position: fixed;
-    top: 85px;
-}
-
 main {
     margin-top: 85px;
 }
@@ -55,7 +50,7 @@ main {
         margin: 0;
     }
 
-    .snowboarding-logo-container {
+    .snowboarding-header-container {
         width: 100%;
         height: 85px;
         top: 0;
@@ -120,7 +115,7 @@ main {
         top: 225px;
     }
     
-    .logo-container {
+    .header-container {
         position: fixed;
     }
     
