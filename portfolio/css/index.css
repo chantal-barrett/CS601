@@ -104,7 +104,7 @@
     .hero-name {
         font-size: 10rem;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 500;
         transition: all 1s;
         margin: 0;
     }

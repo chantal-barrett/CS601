@@ -1,4 +1,4 @@
-@keyframes rotate {
+@keyframes slide {
     from {
         left: 0px;
     }
@@ -31,8 +31,13 @@ main {
     background: var(--light-gray);
 }
 
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
 .description p {
-    margin: 50px;
+    margin: 30px 50px;
     text-align: center;
     font-size: 1.2rem;
     line-height: 1.7rem;
@@ -42,11 +47,11 @@ main {
     margin-top: -85px;
 }
 
-/* Desktop */
+/* Desktop (provide max width here because the scrolling behavior won't be as user friendly at larger screen sizes) */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
     body {
-        min-height: calc(var(--bodyHeight) + 100vh);
+        min-height: calc(var(--bodyHeight) + 40vh);
         margin: 0;
     }
 
@@ -60,9 +65,9 @@ main {
 
     .snowboarding-title {
         position: fixed;
-        animation: rotate 1s linear infinite;
+        animation: slide 1s linear infinite;
         animation-play-state: paused;
-        /* Bind the animation to the scroll */
+        /* Bind the animation to the scroll (a negitive value causes the animation to begin immediately, but partway through */
         animation-delay: calc(var(--scroll) * -1s); 
         display: inline-block;
         font-size: 400px;
@@ -124,5 +129,24 @@ main {
         top: unset;
         bottom: -30px;
         width: 100%;
+    }
+}
+
+@media (min-width: 1401px) {
+    nav {
+        position: unset;
+    }
+    
+    main {
+        margin-top: 0px;
+    }
+
+    .snowboarding-hero-media {
+        height: 500px;
+        overflow: hidden;
+    }
+    
+    .description {
+        position: relative;
     }
 }
