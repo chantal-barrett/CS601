@@ -148,7 +148,6 @@ noscript p {
 /* Nav */
 
 nav {
-    /* display: none; */
     padding: 5px;
     background: linear-gradient(45deg, var(--white) 1%, var(--pink));
     box-shadow: 0 0px 19px 0 rgb(255 75 90 / 50%);
@@ -157,7 +156,7 @@ nav {
     z-index: 100000001;
     top: 0;
     width: 75%;
-    transform: translateX(-110%);
+    transform: translateX(-1000%);
     will-change: transform;
 }
 

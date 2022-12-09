@@ -16,6 +16,7 @@
 
 .tab {
     background: var(--white);
+    color: var(--gray);
     border: none;
     padding: 15px 2px;
     width: 33.3%;

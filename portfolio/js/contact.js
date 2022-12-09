@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!validEmail(email)) { isValid = false; }
         if (!valueProvided(message)) { isValid = false; }
         if (!isValid) {
-
             // Focus on the first incorrect field
             document.querySelector("." + errorClass).querySelector(".form-input").focus();
 

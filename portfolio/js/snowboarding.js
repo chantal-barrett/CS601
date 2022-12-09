@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
             scrollValue = 0.99;
         }
 
-        // Freeze the description content if the snowboarding text is off the screen or if the description container reached the top of the page
+        // Freeze the description content if the snowboarding text is half way off the screen
         if (scrollElement.getBoundingClientRect().left < -1 * (scrollElement.offsetWidth / 2)) {
             description.classList.add("freeze");
         }

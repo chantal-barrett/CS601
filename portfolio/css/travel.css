@@ -15,6 +15,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .location-header {
@@ -47,14 +48,16 @@
 }
 
 .previous {
-    left: 57px;
+    left: 17px;
     background: url("../content/arrow.png");
+    top: 65%;
 }
 
 .next {
     transform: rotate(180deg);
     background: url("../content/arrow.png");
-    right: 57px;
+    right: 17px;
+    top: 65%;
 }
 
 .arrow {
@@ -92,6 +95,18 @@
 
 .selected {
     background: var(--gray);
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+    .previous {
+        left: 57px;
+    }
+    
+    .next {
+        right: 57px;
+    }
 }
 
 @media screen and (max-width: 786px) {

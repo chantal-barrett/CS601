@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function() {
             response.json().then(data => {
                 if(data) {
                     // A user with that email exists already so update the user with the correct error
-                    if (data.name != name) {
+                    if (data.contactName != name) {
                         joinError.innerText = "Whoops, looks like that email is already subscribed to our mailing list. If you wish to change the name associated with this email, please click 'Update Information'";
                     }
                     else {

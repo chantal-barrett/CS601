@@ -129,7 +129,7 @@ main {
 
 @media (min-width: 1401px) {
     nav {
-        position: unset;
+        position: fixed;
     }
     
     main {
