@@ -33,6 +33,26 @@ new Vue({
                     currentPhotoAlt: "Chantal and Kyle now",
                     yearDifference: 21,
                     maxAge: 26
+                },
+                {
+                    id: "mom",
+                    name: "Chantal's Mom",
+                    youngPhotoSource: "./images/mom_old.png",
+                    youngPhotoAlt: "Chantal's mom when she was little",
+                    currentPhotoSource: "./images/mom_new.png",
+                    currentPhotoAlt: "Chantal's mom when she was a teenager",
+                    yearDifference: 14,
+                    maxAge: 65
+                },
+                {
+                    id: "john",
+                    name: "John",
+                    youngPhotoSource: "./images/john_old.png",
+                    youngPhotoAlt: "John when he was young",
+                    currentPhotoSource: "./images/john_current.png",
+                    currentPhotoAlt: "John now",
+                    yearDifference: 22,
+                    maxAge: 28
                 }
             ]
         };
@@ -92,20 +112,28 @@ new Vue({
             let peopleLength = parseInt(document.querySelectorAll(".person-container").length) - 1;
             let direction = event.currentTarget.getAttribute("data-direction");
             let newIndex = "0";
+            let hiddenClass = "hidden";
 
             // Get the new index
             if (direction === "next") {
                 newIndex = parseInt(currentIndex) + 1;
-                if (newIndex > peopleLength) {
-                    newIndex = 0;
-                }
             }
             else if (direction === "previous") {
                 newIndex = parseInt(currentIndex) - 1;
-                if (newIndex === -1) {
-                    newIndex = peopleLength;
-                }
             }
+
+            // Show/hide the correct navigation buttons
+            if (newIndex > peopleLength -1) {
+                document.querySelector(".next").classList.add(hiddenClass);
+            }
+            else if (newIndex === 0) {
+                document.querySelector(".previous").classList.add(hiddenClass);
+            }
+            else {
+                document.querySelector(".next").classList.remove(hiddenClass);
+                document.querySelector(".previous").classList.remove(hiddenClass);
+            }
+            
 
             // Update the active container
             document.querySelector(".person-container.active").classList.remove("active");
@@ -129,7 +157,7 @@ new Vue({
                 </section>
 
                 <div class="navigation-container">
-                    <button class="previous arrow" data-direction="previous" v-on:click="next">
+                    <button class="previous arrow hidden" data-direction="previous" v-on:click="next">
                         <!-- For accessibility -->
                         <span class="screen-reader-only">&larr; Previous</span>
                     </button>
