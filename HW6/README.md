@@ -1,6 +1,6 @@
 # Assignment Six
 
-A website that uses Vue.
+A website that uses Vue.js.
 
 ## Description
 
@@ -12,7 +12,7 @@ This assignment uses HTML5, CSS, Vue.js, and JavaScript to create a web site tha
 In trying my best to get an A on this assigment, I did the following:
 - Styled the page using CSS and made it responsive
 - Added functionality where the user can guess the differences in years between the images
-- Updated the DOM with the correct error message depending on the user's guess
+- Updated the DOM with the correct message depending on the user's guess
 
 Note: The first time you hover on the image it may take a while to change, as the image is loaded on hover. I did this intentionally to help with page performace, however if I had more time I would consider a different implementation.
 
