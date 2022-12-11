@@ -2,10 +2,7 @@
 
 /* Variables */
 :root {
-    --red: #FF0000;
-    --pink: #FFC0CB;
     --white: #FFFFFF;
-    --light-gray: #EEEEEE;
     --gray: #2A2A2A;
 }
 
@@ -133,6 +130,8 @@ h1 {
 
 .result.visible {
     visibility: visible;
+    padding-top: 15px;
+    margin-bottom: 0px;
 }
 
 .navigation-container {
@@ -183,7 +182,7 @@ footer p {
 
     .result {
         min-height: 30px;
-        padding-top: 15px;
+        padding-top: 30px;
     }
 
     header {
