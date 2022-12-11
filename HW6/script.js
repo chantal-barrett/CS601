@@ -78,7 +78,7 @@ new Vue({
             let id = event.currentTarget.getAttribute("data-guess-for");
             let yearsGuess = parseInt(document.getElementById(id + "-years").value);
             let result = document.getElementById(id + "-result");
-            let yearDifference, maxAge, name;
+            let yearDifference, maxAge;
             
             // Get the actual years difference
             for (let i = 0; i < this.people.length; i++) {
@@ -86,7 +86,6 @@ new Vue({
                 if (person.id === id) {
                     yearDifference = person.yearDifference;
                     maxAge = person.maxAge;
-                    name = person.name;
                     break;
                 }
             }
@@ -143,7 +142,7 @@ new Vue({
     template: `
         <div id="app">
                 <section v-for="(person, index) in people" :id="person.id" :class="{'active': index === 0}" class="person-container" :data-index="index">
-                    <img class="image" :src="person.youngPhotoSource" :alt="person.youngPhotoAlt" :data-source="person.currentPhotoSource" :data-alt="person.currentPhotoAlt" width="370" height="370" @mouseover="changePicture" @mouseout="changePicture">
+                    <img class="image" :src="person.currentPhotoSource" :alt="person.currentPhotoAlt" :data-source="person.youngPhotoSource" :data-alt="person.youngPhotoAlt" width="370" height="370" @mouseover="changePicture" @mouseout="changePicture">
 
                     <div class="input-container">
                         <h2>How many years apart do you think these photos of {{ person.name }} were taken?</h2>
