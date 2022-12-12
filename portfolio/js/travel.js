@@ -7,7 +7,7 @@ new Vue({
                 {
                     location: "Aruba",
                     description: "Aruba is the first place I tried acia bowls and let me tell you, they did not disappoint!",
-                    source: "/CS601/portfolio/content/aruba_acia.png",
+                    source: "/portfolio/content/aruba_acia.png",
                     alt: "Acia bowls on the beach",
                     width: "376",
                     height: "506"
@@ -15,7 +15,7 @@ new Vue({
                 {
                     location: "Nashville",
                     description: "People know Nashville for their country music, but one of my favorite parts of Nashville was their milkshakes",
-                    source: "/CS601/portfolio/content/nashville_milkshake.JPG",
+                    source: "/portfolio/content/nashville_milkshake.JPG",
                     alt: "Chantal smiling at a milkshake in Nashville",
                     width: "392",
                     height: "490"
@@ -23,7 +23,7 @@ new Vue({
                 {
                     location: "Aruba",
                     description: "My second time in Aruba, my brother and I went snorkeling!",
-                    source: "/CS601/portfolio/content/aruba_snorkeling.JPG",
+                    source: "/portfolio/content/aruba_snorkeling.JPG",
                     alt: "Chantal snorkeling with her brother",
                     width: "332",
                     height: "442"
@@ -31,7 +31,7 @@ new Vue({
                 {
                     location: "Nantucket",
                     description: "My family and I took a trip to Nantucket and visited my cousin at work on Barlett's Farm",
-                    source: "/CS601/portfolio/content/nantucket.JPG",
+                    source: "/portfolio/content/nantucket.JPG",
                     alt: "Chantal and family in Nantucket",
                     width: "576",
                     height: "432"
@@ -39,7 +39,7 @@ new Vue({
                 {
                     location: "Florida",
                     description: "My dad moved to Florida a few years ago so I try to visit as often as I can. One of my favorite things to do there is go jetskiing - we often make friends with dolphins!",
-                    source: "/CS601/portfolio/content/florida_jetskiing.jpg",
+                    source: "/portfolio/content/florida_jetskiing.jpg",
                     alt: "Jetskiing with dolphin",
                     width: "375",
                     height: "500"
@@ -47,7 +47,7 @@ new Vue({
                 {
                     location: "Cape Cod",
                     description: "My family shared a house on Cape Cod and when I was younger I would always visit this candy store. I think you can tell how much I like it!",
-                    source: "/CS601/portfolio/content/capecod_candy.png",
+                    source: "/portfolio/content/capecod_candy.png",
                     alt: "Chantal in a candy store at Cape Cod",
                     width: "376",
                     height: "507"

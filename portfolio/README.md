@@ -27,6 +27,7 @@ In trying my best to get an A on this assigment, I added many features to my web
 - After the demo I:
     - Updated Vue components to have data returned as a function 
     - Removed scrolling behavior from Firefox and Safari
+    - Updated the nav to slide in from the top instead of the side
     - Cleaned up code, added comments, etc
 
 ## Getting Started

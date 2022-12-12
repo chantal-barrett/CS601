@@ -156,13 +156,13 @@ nav {
     z-index: 100000001;
     top: 0;
     width: 75%;
-    transform: translateX(-1000%);
+    transform: translateY(-110%);
     will-change: transform;
     overflow: scroll;
 }
 
 nav.nav-expanded {
-    transform: translateX(0%);
+    transform: translateY(0%);
     transition: transform .3s ease-out;
     will-change: transform;
 }
