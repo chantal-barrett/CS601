@@ -109,6 +109,8 @@
     }
 }
 
+/* Mobile */
+
 @media screen and (max-width: 786px) {
     .location-image {
         height: auto;

@@ -158,6 +158,7 @@ nav {
     width: 75%;
     transform: translateX(-1000%);
     will-change: transform;
+    overflow: scroll;
 }
 
 nav.nav-expanded {
@@ -406,18 +407,6 @@ nav.noscript .close-nav {
     }
 
 }
-
-/* Tablet */
-
-/* @media screen and (min-width: 480px) and (max-width: 1023.9px) {
-    .header-container {
-        background: var(--gray);
-    }
-
-    .logo-header {
-        color: var(--white);
-    }
-} */
 
 /* Mobile */
 

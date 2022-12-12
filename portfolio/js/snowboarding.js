@@ -10,6 +10,18 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo(0, 0);
     }
 
+    // If Firefox or Safari, don't show scrolling behavior
+    let userAgent = navigator.userAgent;
+    if (userAgent.match(/firefox|fxios/i)) {
+        document.querySelector("body").classList.remove("scroll");
+    }
+    if (userAgent.match(/safari/i)) {
+        document.querySelector("body").classList.remove("scroll");
+    }
+    if (userAgent.match(/chrome|chromium|crios/i)) {
+        document.querySelector("body").classList.add("scroll");
+    }
+    
     // Declare and initalize needed variables
     const scrollElement = document.querySelector(".snowboarding-title");
     const description = document.querySelector(".description");

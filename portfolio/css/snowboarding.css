@@ -11,6 +11,13 @@ main {
     margin-top: 85px;
 }
 
+.hero-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .snowboarding-title {
     display: none;
 }
@@ -45,12 +52,12 @@ main {
 /* Desktop (provide max width here because the scrolling behavior won't be as user friendly at larger screen sizes) */
 
 @media screen and (min-width: 1024px) and (max-width: 1400px) {
-    body {
+    body.scroll {
         min-height: calc(var(--bodyHeight) + 40vh);
         margin: 0;
     }
 
-    .snowboarding-header-container {
+    .scroll .snowboarding-header-container {
         width: 100%;
         height: 85px;
         top: 0;
@@ -58,11 +65,11 @@ main {
         background: var(--white);
     }
 
-    .snowboarding-title {
+    .scroll .snowboarding-title {
         position: fixed;
         animation: slide 1s linear infinite;
         animation-play-state: paused;
-        /* Bind the animation to the scroll (a negitive value causes the animation to begin immediately, but partway through */
+        /* Bind the animation to the scroll (a negitive value causes the animation to begin immediately, but partway through) */
         animation-delay: calc(var(--scroll) * -1s); 
         display: inline-block;
         font-size: 400px;
@@ -73,7 +80,7 @@ main {
         z-index: 10000001;
     }
     
-    .description {
+    .scroll .description {
         position: absolute;
         bottom: calc(var(--descriptionPos) - 85px);
         background-color: pink;
@@ -82,12 +89,12 @@ main {
         z-index: 1000001;
     }
     
-    .freeze {
+    .scroll .freeze {
         position: fixed;
         top: 0px;
     }
     
-    .snowboarding-hero {
+    .scroll .snowboarding-hero {
         background: url('../content/snowboarding-butter.jpg');
         background-repeat: none;
         filter: grayscale(1);
@@ -98,28 +105,28 @@ main {
         width: 100vw;
     }
     
-    .snowboarding-hero-media {
+    .scroll .snowboarding-hero-media {
         margin: 30px;
         height: 500px;
         overflow: hidden;
         filter: grayscale(1);
     }
     
-    .snowboarding-hero-video {
+    .scroll .snowboarding-hero-video {
         width: 100%;
         margin-top: -100px;
     }
     
-    .snowboarding-hero-title {
+    .scroll .snowboarding-hero-title {
         background: var(--white);
         top: 225px;
     }
     
-    .header-container {
+    .scroll .header-container {
         position: fixed;
     }
     
-    footer {
+    .scroll footer {
         position: fixed;
         top: unset;
         bottom: -30px;

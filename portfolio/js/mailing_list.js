@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const updateEmail = document.getElementById("update-email");
     updateEmail.addEventListener("keyup", () => {
         // The user does not need to provide an email so if it is empty, hide the error message
-        if (updateEmail.value == "") {
+        if (updateEmail.value === "") {
             updateEmail.parentElement.classList.remove(errorClass);
         }
         else {
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if(data) {
                     // A user with that email exists already so update the user with the correct error
                     if (data.contactName != name) {
-                        joinError.innerText = "Whoops, looks like that email is already subscribed to our mailing list. If you wish to change the name associated with this email, please click 'Update Information'";
+                        joinError.innerText = "Whoops, looks like that email is already subscribed to our mailing list. If you wish to change the name associated with this email, please click 'Update'";
                     }
                     else {
                         joinError.innerText = "Whoops, looks like you are already subscribed to our mailing list - awesome!";
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     return false;
                 }
             })
-            .then( userExists => {
+            .then(userExists => {
 
                 // If the user exists, don't run this code
                 if (userExists) {
@@ -249,18 +249,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Validate the user's email
         if(!validEmail(document.getElementById("account-email"))) {
-            updateError.innerHTML = "Whoops, we could not update your information. Please ensure you are providing a valid account email address";
+            updateError.innerText = "Whoops, we could not update your information. Please ensure you are providing a valid account email address";
             isValid = false;
         }
 
         // Validate the user provided at least a name or email
         if (name === "" && email === "") {
-            updateError.innerHTML = "Whoops, please be sure you enter either an updated name or email!</p>";
+            updateError.innerText = "Whoops, please be sure you enter either an updated name or email!";
             isValid = false;
         }
         // If the user provided an email, but its not a valid email address format
         else if (email != "" && !validEmail(document.getElementById("update-email"))) {
-            updateError.innerHTML = "Whoops, we could not update your information. Please ensure you are providing a valid email address";
+            updateError.innerText = "Whoops, we could not update your information. Please ensure you are providing a valid email address";
             isValid = false;
         }
 
@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function() {
             response.json().then(data => {
 
                 if(response.ok) {
-                    // If there is data, that mean the user exists
+                    // If there is data, that means the user exists
                     if(data) {
                         return true;
                     }
@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
                 else {
-                    updateError.innerHTML = "Whoops, we could not update your information at this moment. Please try again later.";
+                    updateError.innerText = "Whoops, we could not update your information at this moment. Please try again later.";
                     updateError.classList.remove(hiddenClass);
                     return false;
                 }
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // If the user does not exist
                 if (!userExists) {
                     // Update the error message
-                    updateError.innerHTML = `Whoops, looks like that email is not subscribed to our mailing list yet. No worries, you can join our mailing list <a href="mailing_list.html">here</a>`;
+                    updateError.innerText = `Whoops, looks like that email is not subscribed to our mailing list yet. No worries, you can join our mailing list <a href="mailing_list.html">here</a>`;
                     updateError.classList.remove(hiddenClass);
                     return false;
                 }
@@ -332,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                     else {
                         successMessage.classList.add(hiddenClass)
-                        updateError.innerHTML = "Whoops, we could not update your information at this moment. Please try again later.";
+                        updateError.innerText = "Whoops, we could not update your information at this moment. Please try again later.";
                         updateError.classList.remove(hiddenClass);
                     }
                 });
@@ -413,7 +413,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 .then(response => {
                     if(response.ok) {
                         // Show a success message so the user knows the form submitted okay
-                        successMessage.innerText = "We have successfully unsubscribe " + email + " from our mailing list";
+                        successMessage.innerText = "We have successfully unsubscribed " + email + " from our mailing list";
                         successMessage.classList.remove(hiddenClass);
                         unsubscribeError.classList.add(hiddenClass);
             

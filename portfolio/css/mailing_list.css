@@ -90,6 +90,7 @@ form {
     width: 122px;
     text-transform: uppercase;
     margin: 0px auto;
+    color: var(--gray);
 }
 
 .submit-button:hover {
@@ -142,7 +143,7 @@ form {
     color: var(--red);
 }
 
-/* Desktop */
+/* Tablet and desktop */
 
 @media screen and (min-width: 768px) {
 
