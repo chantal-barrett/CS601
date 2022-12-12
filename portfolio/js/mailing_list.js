@@ -437,7 +437,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Clears all input fields within the given container element
     function clearInputFields(container) {
         let inputFields = container.querySelectorAll(".form-input");
-        for (input of inputFields) {
+        for (let input of inputFields) {
             input.value = "";
         }
     }

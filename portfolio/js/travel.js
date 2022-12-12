@@ -1,5 +1,5 @@
 // Use Vue.js for page
-var travelContainer = new Vue({
+new Vue({
     el: '#travelContainer',
     data() {
         return { 

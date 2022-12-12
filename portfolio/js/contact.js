@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Clear the input fields
                 const inputFields = document.querySelectorAll(".form-input");
-                for (input of inputFields) {
+                for (let input of inputFields) {
                     input.value = "";
                 }
                 document.getElementById("subscribe").checked = false;

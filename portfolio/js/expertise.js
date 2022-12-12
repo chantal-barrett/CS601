@@ -1,4 +1,4 @@
-var expertiseApp = new Vue({
+new Vue({
     el: '#expertiseApp',
     data() {
         return {

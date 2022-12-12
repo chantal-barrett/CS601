@@ -83,7 +83,7 @@ main {
     .scroll .description {
         position: absolute;
         bottom: calc(var(--descriptionPos) - 85px);
-        background-color: pink;
+        background-color: var(--pink);
         height: calc(100vh + 1000px);
         width: 100%;
         z-index: 1000001;
@@ -96,7 +96,7 @@ main {
     
     .scroll .snowboarding-hero {
         background: url('../content/snowboarding-butter.jpg');
-        background-repeat: none;
+        background-repeat: no-repeat;
         filter: grayscale(1);
         background-size: cover;
         background-position: center;
