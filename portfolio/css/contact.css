@@ -35,7 +35,7 @@
 }
 
 .input-wrapper {
-    width: calc((100% - 30px)/2);
+    width: 100%;
 }
 
 .input-label {
@@ -146,6 +146,10 @@
         padding-left: 30px;
         margin-top: 0;
         max-width: 70%;
+    }
+
+    .input-wrapper {
+        width: calc((100% - 30px)/2);
     }
 
 }

@@ -6,7 +6,7 @@ new Vue({
             images: [
                 {
                     location: "Aruba",
-                    description: "Aruba is the first place I tried acia bowls and let me tell you, they did not dissapoint!",
+                    description: "Aruba is the first place I tried acia bowls and let me tell you, they did not disappoint!",
                     source: "/CS601/portfolio/content/aruba_acia.png",
                     alt: "Acia bowls on the beach",
                     width: "376",
